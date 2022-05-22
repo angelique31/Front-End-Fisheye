@@ -1,33 +1,18 @@
-
-// let userData = [];
-
 /**
  * Fonction pour récupérer les données
  * @returns 
  */
 async function getPhotographers() {
-    // Penser à remplacer par les données récupérées dans le json
-     //await fetch('data/photographers.json').then((res) => res.json()).then((data) => userData = data.photographers);
-     
-    const data = await fetch ('data/photographers.json');
-    // console.log(userData);
-    const photographers = await data.json();
-        
-    // et bien retourner le tableau photographers seulement une fois
-    return photographers;
+    return fetch ('data/photographers.json')
+        .then((res) => {
+            return res.json();
+        })
+        .then((datas) => {
+            // console.log(datas);
+            return datas;
+        });
+    
 }
-
-
-// return fetch ('data/photographers.json')
-// .then(function(response) {
-//     return response.json();
-// })
-// .then((datas) => {
-
-//     return datas;
-// })
-// .catch(err =>console.log('nope', err));
-
 
 /**
  * Fonction pour afficher les données
@@ -38,7 +23,6 @@ async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
-        // console.log(photographerModel);
         const userCardDOM = photographerModel.getUserCardDOM();
         // console.log(userCardDOM);
         photographersSection.appendChild(userCardDOM);
@@ -48,22 +32,27 @@ async function displayData(photographers) {
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
-    // console.log(photographers);
+    console.log(photographers);
+    
     displayData(photographers);
 }
 
 init();
 
 /**
- * Fonction des photographes
+ * Fonction des données des photographes
  * @param {*} data 
- * @returns 
+ * @returns - getUserCardDOM
  */
 function photographerFactory(data) {
-    const { name, portrait } = data;
+    const { name, portrait, city, country, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
-    // console.log(picture);
+    
+    /**
+     * Fonction de la création des cartes des photographes
+     * @returns - article
+     */
     function getUserCardDOM() {
         const article = document.createElement('article');
         const img = document.createElement('img');
@@ -72,7 +61,26 @@ function photographerFactory(data) {
         h2.textContent = name;
         article.appendChild(img);
         article.appendChild(h2);
+
+        let h3 = document.createElement ('h3');
+        h3.textContent = `${city}, ${country}`; 
+        article.appendChild(h3);
+
+
+        const p = document.createElement ('p');
+        p.textContent = tagline;
+        article.appendChild(p);
+
+        const span = document.createElement ('span');
+        span.textContent = `${price}€/jour`;
+        article.appendChild(span);
+
         return article;
+        
     }
-    return { name, picture, getUserCardDOM };
+    return { name, picture, city, country, tagline, price, getUserCardDOM };
 }
+
+
+
+    
