@@ -33,3 +33,5 @@ La programmation orientée objet est utilisée.
 
 Le code est lisible. Choisir des noms qui ont un sens pour les variables, les fonctions et les classes. Ajouter des commentaires au code si le nom n'indique pas clairement ce qu’il se passe.
 
+Voici le lien du site vià github pages :  https://angelique31.github.io/Front-End-Fisheye/
+
