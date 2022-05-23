@@ -5,6 +5,8 @@ Créez un site accessible pour une plateforme de photographes
 
 ![image](https://user-images.githubusercontent.com/93211301/169892815-625aa750-32d3-4994-acde-5d6c1edb4ed2.png)
 
+FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. Ils ont récemment levé des fonds et aimeraient mettre à jour leur site web.
+
 ## Compétences évaluées
 
 - Ecrire du code JavaScript maintenable
