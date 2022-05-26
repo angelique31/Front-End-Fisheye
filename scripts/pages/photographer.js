@@ -142,10 +142,6 @@ function mediaFactory(data) {
                         <img src="${picture}" id=${id}>
                     <a/>
                     <h2>${title}</h2>
-                    <h3>${date}</h3>
-                    
-                    <span>${price}€/jour</span>
-                    
                 </article>`;
     
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM};

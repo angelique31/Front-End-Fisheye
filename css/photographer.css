@@ -62,10 +62,24 @@ header .logo{
     margin-left: 70px;
 }
 
+.galleryPhotos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 70px;
+    margin-left: 100px;
+    row-gap: 50px;
+}
+
 .galleryPhotos article img {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 350px;
     object-fit: cover; 
+}
+
+.galleryPhotos h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #901C1C;
 }
 
 #contact_modal {
@@ -147,6 +161,12 @@ form input {
     border: none;
     border-radius: 5px;
 }
+@media screen and (max-width: 1220px){
+    .galleryPhotos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 @media screen and (max-width: 1120px){
     .photograph-header .info{
@@ -157,6 +177,7 @@ form input {
         left: 70px;
     }
 }
+
 @media screen and (max-width: 830px){
     .photograph-header article h2{
         font-size: 3rem;
@@ -173,6 +194,7 @@ form input {
     .photograph-header .info{
         margin-left: 20px;
     }
+
     .contact_button{
         width: 150px;
         height: 60px;
@@ -185,6 +207,11 @@ form input {
         height: 180px;
         width: 180px;
         right: 20%;
+    }
+
+    .galleryPhotos{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -251,31 +278,31 @@ form input {
     .photograph-header article p{
         font-size: 0.5rem;
     }
-
-    @media screen and (max-width: 375px){
-        header .logo{
-            height: 30px;
-            margin: 10px 0 20px 110px;
-        }
-        .photograph-header .info{
-            text-align: center;
-        }
-        .photograph-header article h2{
-            font-size: 1.5rem;
-        }
-    
-        .photograph-header article h3{
-            font-size: 0.8rem;
-        }
-
-        .contact_button{
-            left: 30px;
-        }
-
-        .photograph-header article img{
-            left: 30px;
-            height: 110px;
-            width: 110px;
-        }
-    }
 }
+
+@media screen and (max-width: 375px){
+    header .logo{
+        height: 30px;
+        margin: 10px 0 20px 110px;
+    }
+    .photograph-header .info{
+        text-align: center;
+    }
+    .photograph-header article h2{
+        font-size: 1.5rem;
+    }
+
+    .photograph-header article h3{
+        font-size: 0.8rem;
+    }
+
+    .contact_button{
+        left: 30px;
+    }
+
+    .photograph-header article img{
+        left: 30px;
+        height: 110px;
+        width: 110px;
+    }
+}   
