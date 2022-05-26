@@ -52,7 +52,7 @@ async function displayMedia(medias) {
     const photographersSection = document.querySelector('.galleryPhotos');
 
     medias.forEach((media) => {
-        const photographerModel = mediaFactory(name, media);
+        const photographerModel = mediaFactory(media);
         console.log(photographerModel);
         const userCardDOM = photographerModel.getUserCardDOM();
         // console.log(userCardDOM);
@@ -67,8 +67,8 @@ async function init() {
     const { photographers } = await getPhotographers();
     // console.log(photographers);
     const idRequest = window.location.href.split('?')[1];
-    
     const photographer = await photographers.filter(photographer => photographer.id == idRequest);
+
     displayData(photographer);
 }
 
@@ -81,7 +81,6 @@ async function initMedias() {
     console.log(medias);
     const idRequest = window.location.href.split('?')[1];
     const media =  await medias.filter(media => media.photographerId == idRequest);
-   
 
     displayMedia(media);
 }
@@ -106,31 +105,31 @@ function photographerFactory(data) {
     
     const getUserCardDOM = () => `
                 <article>
-                    <a href= "photographer.html?${id}">
-                        <img src="${picture}" alt="Photo de ${name}">
-                    <a/>
+                <div class=info>
                     <h2>${name}</h2>
                     <h3>${city}, ${country}</h3>
                     <p>${tagline}</p>
-                    <span>${price}€/jour</span>
+                    
+                </div>
+                <a href= "photographer.html?${id}">
+                    <img src="${picture}" alt="Photo de ${name}">
+                <a/>
                     
                 </article>`;
     
     return { name, id, picture, city, country, tagline, price, getUserCardDOM};
 }
 
-let firstname;
+
 /**
  * Factory function (fonction des données des medias)
  * @param {*} data 
  * @returns - getUserCardDOM
  */
-function mediaFactory(name, data) {
+function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
-    // firstname = name.split(' ')[0];
-    firstname = ('');
-    console.log(firstname);
-    const picture = `assets/samplePhotos/Nabeel/${image}`;
+
+    const picture = `assets/medias/${photographerId}/${image} `;
     
     /**
      * Fonction de la création des cartes des photographes
@@ -140,7 +139,7 @@ function mediaFactory(name, data) {
     const getUserCardDOM = () => `
                 <article>
                     <a href= "photographer.html?${photographerId}">
-                        <img src="${picture}">
+                        <img src="${picture}" id=${id}>
                     <a/>
                     <h2>${title}</h2>
                     <h3>${date}</h3>

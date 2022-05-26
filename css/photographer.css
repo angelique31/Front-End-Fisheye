@@ -1,13 +1,65 @@
-header .logo{
-    height: 50px;
-    /* margin-left: 100px; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+
+header .logo{
+    height: 50px;
+    margin: 10px 0 20px 100px;
+}
+.photograph-header{
+    position: relative;
+}
+
+/* .photograph-header button{
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+} */
 .photograph-header article img {
     height: 200px;
     width: 200px;
     object-fit: cover;
     border-radius: 50%;
+    position: absolute;
+    bottom: 18%;
+    right: 5%;
+}
+
+.photograph-header article{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.photograph-header article h2{
+    font-size: 4rem;
+    font-weight: 400;
+    color: #D3573C;
+}
+
+.photograph-header article h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #901C1C;
+    line-height: 31px;
+}
+
+.photograph-header article p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.photograph-header .info{
+    margin-top: 70px;
+    margin-left: 70px;
 }
 
 .galleryPhotos article img {
@@ -27,7 +79,7 @@ header .logo{
 }
 
 .contact_button {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: white;
     padding: 11px;
@@ -37,6 +89,9 @@ header .logo{
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
 }
 
 .modal {
@@ -93,11 +148,133 @@ form input {
     border-radius: 5px;
 }
 
+@media screen and (max-width: 1120px){
+    .photograph-header .info{
+        margin-top: 20px;
+    }
+    .contact_button{
+        bottom: 20px;
+        left: 70px;
+    }
+}
+@media screen and (max-width: 830px){
+    .photograph-header article h2{
+        font-size: 3rem;
+    }
 
-@media screen and (max-width: 750px){
+    .photograph-header article h3{
+        font-size: 1.2rem;
+    }
+
+    .photograph-header article p{
+        font-size: 0.9rem;
+    }
+
+    .photograph-header .info{
+        margin-left: 20px;
+    }
+    .contact_button{
+        width: 150px;
+        height: 60px;
+        font-size: 1rem;
+        top: 160px;
+        left: 20px;
+    }
+
+    .photograph-header article img{
+        height: 180px;
+        width: 180px;
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 715px){
+    .photograph-header{
+        height: 400px;
+    }
+    .photograph-header article img{
+        bottom: 35px;
+        left: 20px;
+        height: 150px;
+        width: 150px;
+    }
     
+    .photograph-header article h2{
+        font-size: 2rem;
+    }
 
-    h1{
-        margin-right: 0;
+    .photograph-header article h3{
+        font-size: 1rem;
+    }
+
+    .photograph-header article p{
+        font-size: 0.8rem;
+    }
+
+    .contact_button{
+        width: 120px;
+        height: 50px;
+        font-size: 0.7rem;
+        top: 140px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .contact_button{
+        left: 40px;
+    }
+
+    .photograph-header article img{
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    header .logo{
+        height: 40px;
+    }
+
+    .contact_button{
+        width: 100px;
+        height: 40px;
+        font-size: 0.6rem;
+    }
+
+    .photograph-header article img{
+        height: 130px;
+        width: 130px;
+        bottom: 70px;
+        left: 30px;
+    }
+
+    .photograph-header article p{
+        font-size: 0.5rem;
+    }
+
+    @media screen and (max-width: 375px){
+        header .logo{
+            height: 30px;
+            margin: 10px 0 20px 110px;
+        }
+        .photograph-header .info{
+            text-align: center;
+        }
+        .photograph-header article h2{
+            font-size: 1.5rem;
+        }
+    
+        .photograph-header article h3{
+            font-size: 0.8rem;
+        }
+
+        .contact_button{
+            left: 30px;
+        }
+
+        .photograph-header article img{
+            left: 30px;
+            height: 110px;
+            width: 110px;
+        }
     }
 }
