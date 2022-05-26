@@ -200,7 +200,7 @@ form input {
     }
     
     .photograph-header article h2{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .photograph-header article h3{
@@ -209,6 +209,7 @@ form input {
 
     .photograph-header article p{
         font-size: 0.8rem;
+        line-height: 10px;
     }
 
     .contact_button{
