@@ -15,8 +15,12 @@ header .logo{
 }
 .photograph-header{
     position: relative;
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
 }
 
+   
 /* .photograph-header button{
     position: absolute;
     bottom: 40%;
@@ -39,7 +43,7 @@ header .logo{
 }
 
 .photograph-header article h2{
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 400;
     color: #D3573C;
 }
@@ -90,11 +94,7 @@ header .logo{
     width: 100%;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-}
+
 
 .contact_button {
     font-size: 1.2rem;
@@ -109,7 +109,7 @@ header .logo{
     cursor: pointer;
     position: absolute;
     bottom: 40%;
-    right: 40%;
+    right: 30%;
 }
 .contact_button_form {
     font-size: 1.2rem;
