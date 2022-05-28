@@ -13,6 +13,12 @@ async function getPhotographers() {
             console.log(datas);
             return datas;
         });    
+
+    // let dataPh;
+    // return fetch('data/photographers.json')
+    //     .then((res) => res.json())
+    //     .then((datas) => (dataPh = datas.photographers))
+    //     .catch((error) => alert(error));
 }
 
 /**
@@ -26,6 +32,12 @@ function getMedias() {
         .then(data => data.media);
         // .catch(err => console.log('Error parsing photos', err));
     return medias;
+
+    // let dataMedia;
+    // return fetch('data/photographers.json')
+    //     .then((res) => res.json())
+    //     .then((data) => (dataMedia = data.media))
+    //     .catch((error) => alert(error));
 }
 
 /**
@@ -38,8 +50,7 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
-        // console.log(userCardDOM);
-        // photographersSection.appendChild(userCardDOM);
+        
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
     });
 }
@@ -53,10 +64,9 @@ async function displayMedia(medias) {
 
     medias.forEach((media) => {
         const photographerModel = mediaFactory(media);
-        console.log(photographerModel);
+        // console.log(photographerModel);
         const userCardDOM = photographerModel.getUserCardDOM();
-        // console.log(userCardDOM);
-        // photographersSection.appendChild(userCardDOM);
+        
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
     });
 }
@@ -115,7 +125,11 @@ function photographerFactory(data) {
                     <img src="${picture}" alt="Photo de ${name}">
                 <a/>
                     
-                </article>`;
+                </article>
+
+    <aside>
+                <span>${price}</span>
+                </aside>`;
     
     return { name, id, picture, city, country, tagline, price, getUserCardDOM};
 }
@@ -130,6 +144,11 @@ function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
 
     const picture = `assets/medias/${photographerId}/${image} `;
+
+    // const modale = document.querySelector('#contact_modal');
+    // const h2 = modale.querySelector('h2');
+    // console.log(h2);
+    // h2.innerText = `Contactez-moi ${}`;
     
     /**
      * Fonction de la création des cartes des photographes
@@ -143,7 +162,7 @@ function mediaFactory(data) {
                     <a/>
                     <h2>${title}</h2>
                 </article>`;
-    
+                
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM};
 }
 

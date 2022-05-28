@@ -20,7 +20,7 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="btn-signup contact_button">Contactez-moi</button>
       </div>
 
       <section class="galleryPhotos"></section>
@@ -29,33 +29,40 @@
 			    <div class="modal">
 				  <header>
             <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+            <img class="close" src="assets/icons/close.svg" />
           </header>
-				  <form>
-					  <div>
+				  <form name="reserve" action="photographer.html" method="get" >
+
+					  <div class="formData first-container">
 						  <label for="first">Prénom</label><br>
-                <input class="text-control" type="text" id="first" name="first"  placeholder="votre prénom ici" autocomplete="off"/><br>
+                <input class="text-control" type="text" id="first" name="first" minlength="2" placeholder="votre prénom ici" autocomplete="off" required/><br>
+                <span></span>
 						</div>
 
-            <div>
+            <div class="formData last-container">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" placeholder="votre nom ici"  autocomplete="off"><br>
+              <input class="text-control" type="text" id="last" name="last" placeholder="votre nom ici"  autocomplete="off" required><br>
               <span></span>
             </div>
 
-            <div class="formData">
+            <div class="formData email-container">
               <label for="email">Email</label><br>
-              <input class="text-control" type="email" id="email" name="email" placeholder="Ex:email@domaine.com" autocomplete="off"/><br>
+              <input class="text-control" type="email" id="email" name="email" placeholder="Ex:email@domaine.com" autocomplete="off" required/><br>
               <span></span>
             </div>
-            <label for="message">Votre message</label><br>
-            <textarea name="message" id="message" rows="10" cols="38" placeholder="Votre message ici"></textarea>       
-       
-          <button class="contact_button_form">Envoyer</button>
-				</form>
+
+            <div class=" formaData message-container">
+              <label for="message">Votre message</label><br>
+              <textarea class="text-control" type="text"  name="message" id="message" rows="10" cols="38" placeholder="Votre message ici" autocomplete="off" required></textarea>      
+              <span></span>
+            
+            </div>
+            <input class="contact_button_form" type="submit" value="Envoyer">
+				  </form>
 			</div>
 		</div>
     </main>
+    
     <script src="./scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

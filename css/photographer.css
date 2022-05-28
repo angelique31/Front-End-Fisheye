@@ -12,6 +12,7 @@ body {
 header .logo{
     height: 50px;
     margin: 10px 0 20px 100px;
+    cursor: pointer;
 }
 .photograph-header{
     position: relative;
@@ -93,7 +94,23 @@ header .logo{
     left: 100px;
     width: 100%;
 }
+/*******Classes des erreurs du formulaire*********/
+.error span{
+    opacity: 1;
+    font-size: 1rem;
+    color: #901C1C;
+    font-weight: 600;
+  }
 
+.error input{
+    border: 3px solid red
+  } 
+  
+.formData .text-control:valid{
+    border: 3px solid rgb(5, 190, 5)
+  }
+
+/*******Fin des classes des erreurs du formulaire*********/
 
 
 .contact_button {
@@ -110,6 +127,12 @@ header .logo{
     position: absolute;
     bottom: 40%;
     right: 30%;
+    transition: 0.5s;
+}
+
+.contact_button:hover{
+    background-color: #c03d1f;
+    color: #312E2E;
 }
 .contact_button_form {
     font-size: 1.2rem;
@@ -189,7 +212,9 @@ form input {
     border: none;
     border-radius: 5px;
     font-size: 2rem;
+    outline: none;
 }
+
 
 /* form input:focus{
     color: #D3573C;
@@ -199,6 +224,10 @@ form input {
 textarea{
     resize: none;
     font-size: 1.7rem;
+}
+
+.contact_modal{
+    display: block;
 }
 
 @keyframes modalopen {
