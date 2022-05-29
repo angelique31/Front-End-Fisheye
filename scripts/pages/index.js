@@ -24,8 +24,7 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
-        // console.log(userCardDOM);
-        // photographersSection.appendChild(userCardDOM);
+        
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
     });
 }
@@ -59,12 +58,13 @@ function photographerFactory(data) {
                 <article>
                     <a href= "photographer.html?${id}">
                         <img src="${picture}" alt="Photo de ${name}">
-                    <a/>
-                    <h2>${name}</h2>
-                    <h3>${city}, ${country}</h3>
-                    <p>${tagline}</p>
-                    <span>${price}€/jour</span>
-                    
+                    </a>
+                    <div class=info>
+                        <h2>${name}</h2>
+                        <h3>${city}, ${country}</h3>
+                        <p>${tagline}</p>
+                        <span>${price}€/jour</span>
+                    </div>
                 </article>`;
     
     return { name, id, picture, city, country, tagline, price, getUserCardDOM};

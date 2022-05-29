@@ -9,6 +9,7 @@
     <title>Fishey, nouvelle plateforme de photographes</title>
     <meta name="description" content="Fisheye par openclassrooms. La nouvelle plateforme de photographes">
     <link href="./css/photographer.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/0b6d538c32.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/images/shortcutIcon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
@@ -24,6 +25,13 @@
       </div>
 
       <section class="galleryPhotos"></section>
+
+      <aside>
+        <span class="like">
+          <i class="fas fa-heart heart-fas"></i>
+        </span>
+        <span class="price-day"></span>
+      </aside>
     
         <div id="contact_modal">
 			    <div class="modal">
@@ -41,7 +49,7 @@
 
             <div class="formData last-container">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" placeholder="votre nom ici"  autocomplete="off" required><br>
+              <input class="text-control" type="text" id="last" name="last"  minlength="2" placeholder="votre nom ici"  autocomplete="off" required><br>
               <span></span>
             </div>
 
@@ -64,6 +72,7 @@
     </main>
     
     <script src="./scripts/pages/photographer.js"></script>
+    <script src="./scripts/pages/media.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

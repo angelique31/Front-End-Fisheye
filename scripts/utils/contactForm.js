@@ -169,6 +169,7 @@ const onSubmit = (e) => {
                 inputs[i].type === 'email' 
             ) {
                 data.push(inputs[i].value);
+                
             }
             
             return data;
@@ -186,7 +187,7 @@ const onSubmit = (e) => {
        * @type boolean
        */
         let validInputs = [];
-  
+       
         validInputs.push(firstChecker(values[0]));
         validInputs.push(lastChecker(values[1]));
         validInputs.push(emailChecker(values[2]));
