@@ -1,5 +1,31 @@
 {
+  "name": "front-end-fisheye",
+  "description": "Projet 6 du parcours __Javascript-react__ chez OpenClassroom. \r Créez un site accessible pour une plateforme de photographes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelique31/Front-End-Fisheye.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelique31/Front-End-Fisheye/issues"
+  },
+  "homepage": "https://github.com/angelique31/Front-End-Fisheye#readme",
   "devDependencies": {
-    "eslint": "^8.15.0"
+    "@babel/core": "^7.18.5",
+    "babel-eslint": "^10.0.2",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.17.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
   }
 }

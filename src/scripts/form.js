@@ -1,49 +1,51 @@
 const contactBtn = document.querySelector('.contact_button');
 const closeBtn = document.querySelector('.close');
 const modalbg = document.querySelector('#contact_modal');
+const main = document.querySelector('main')
+const firstName = document.querySelector('#first')
 
 // 
 /**
- * Fonction pour ouvrir la modale
+ * open modale
  */
 function launchModal() {
-    modalbg.style.display = 'block'; 
+    main.setAttribute("aria-hidden", false);
+    modalbg.setAttribute("aria-hidden", true)
+    modalbg.style.display = 'block';
+    firstName.focus()
 }
-  
+// modalbg.focus()  
+
 contactBtn.addEventListener('click', launchModal);
 
   
 /**
-   * Fonction pour fermer la modale
+   * close modale
    */
 function closeModal() {
-    modalbg.style.display = 'none'; 
+    modalbg.style.display = 'none';
 }
   
 closeBtn.addEventListener('click', closeModal);
   
 
-// Les messages d'erreurs
+/*********************************************** ***/
 
 const form = document.querySelector('form');
-
-// const submitInput = document.querySelector('.contact_button_form');
 const submitInput = form[form.length - 1];
-/**
- * On point les inputs par leur id
- */
 const inputs = document.querySelectorAll(
     '#first, #last, #email, #message'
 );
 
+
 /**
- * Fonction qui permet d'évoluer dans chacun des inputs
+ * 
  * @param {*} e - object event
- * @param {*} e.target.value - value de l'input
+ * @param {*} e.target.value - value input
  */
 inputs.forEach((input) => {
     input.addEventListener('input', (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         switch (e.target.id) {
         case 'first':
             firstChecker(e.target.value);
@@ -67,7 +69,7 @@ inputs.forEach((input) => {
 /**
  * function firstname (first)
  * @param {*} value
- * @returns - true pour la soumission du formulaire
+ * @returns - true for the submit form
  */
 const firstChecker = (value) => {
     const firstContainer = document.querySelector('.first-container');
@@ -88,7 +90,7 @@ const firstChecker = (value) => {
 /**
  * function name (last)
  * @param {*} value
- * @returns - true pour la soumission du formulaire
+ * @returns - true for the submit form
  */
 const lastChecker = (value) => {
     const lastContainer = document.querySelector('.last-container');
@@ -110,7 +112,7 @@ const lastChecker = (value) => {
 /**
    * function email
    * @param {*} value
-   * @returns - true pour la soumission du formulaire
+   * @returns - true for the submit form
    */
 const emailChecker = (value) => {
     const emailContainer = document.querySelector('.email-container');
@@ -130,7 +132,7 @@ const emailChecker = (value) => {
 /**
  * function firstname (first)
  * @param {*} value
- * @returns - true pour la soumission du formulaire
+ * @returns - true for the submit form
  */
 const messageChecker = (value) => {
     const firstContainer = document.querySelector('.message-container');
@@ -149,41 +151,41 @@ const messageChecker = (value) => {
 };
 
 /**
- * Vérifier les inputs du formulaire avant sa soumission
+ * Verify form inputs before submission
  * @param {*} e - object event
  */
 const onSubmit = (e) => {
     e.preventDefault();
   
     /**
-     * Récupérer les valeurs des inputs du formulaire
-     * @param {*} inputs - array: les tags du query selector
-     * @returns - array: les données du query selector
+     * Retrieve form input values
+     * @param {*} inputs - array: tags from query selector
+     * @returns - array: les data from query selector
      */
     const formValues = (inputs) => {
         let data = [];
-  
+    
         for (let i = 0; i < inputs.length; i++) {
             if (
                 inputs[i].type === 'text' ||
-                inputs[i].type === 'email' 
+                inputs[i].type === 'email' ||
+                inputs[i].type === 'textarea'
             ) {
                 data.push(inputs[i].value);
                 
             }
-            
-            return data;
         }
+        return data;
     };
   
     /**
-     * Vérifie la valeur de chacun des inputs
-     * @param {*} values - array: les données du query selector
-     * @returns - boolean: true si valid
+     * Retrieve form input values
+     * @param {*} values - array: data from query selector
+     * @returns - boolean: true if valid
      */
     const formIsValid = (values) => {
         /**
-       * Teste la validité de chaque input
+       * Tests the validity of each input
        * @type boolean
        */
         let validInputs = [];
@@ -203,17 +205,34 @@ const onSubmit = (e) => {
         }
         return isValid;
     };
-  
-    // si Valid
+    
+   /**
+    * If valid
+    */
     if (formIsValid(formValues(inputs))) {
         closeModal();
-      
+        console.table (formValues(inputs))
+        form.querySelectorAll('.text-control').forEach(input => input.value = '');
+        
     } else {
         launchModal();
     }
 };
-  
+
 submitInput.addEventListener('click', (e) => onSubmit(e));
   
 
+/**
+ * Close modale form with Escape
+ */
+window.addEventListener("keyup", (e) => {
+    closeModalKey(e);
+  });
+  
+  function closeModalKey(e) {
+    if ((modalbg.style.display = "block" && e.key === "Escape")) {
+      closeModal();
+    }
+  }
 
+  

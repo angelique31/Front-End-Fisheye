@@ -62,12 +62,54 @@ header .logo{
     margin-top: 70px;
     margin-left: 70px;
 }
+
+/***********Menu de tri***********/
+.sort {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.menuSelect{
+    background-color:  #901C1C;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 50px;
+    width: 180px;
+    position: relative;
+    z-index: 1;
+    padding: 15px 0;
+    padding-left: 20px;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+.menuSelect:hover{
+    background-color: #c03d1f;
+    transform: scale(1.02);
+    box-shadow: 1px 1px 8px 0px  #312e2e;
+}
+
+.fa-chevron-up{
+    display: none;
+}
+
+.fa-chevron-down{
+    display: flex;
+}
+
+.pop, .date, .titre{
+    font-size: 1.3rem;   
+}
+
+
 /********Gallery photos***********/
 .galleryPhotos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 70px;
-    margin-left: 100px;
+    margin: 70px 0 100px 100px;
     row-gap: 50px;
 }
 
@@ -75,7 +117,7 @@ header .logo{
     width: 350px;
 }
 
-.galleryPhotos article img {
+.galleryPhotos article img, video{
     height: 300px;
     width: 100%;
     object-fit: cover; 
@@ -85,13 +127,19 @@ header .logo{
     transition: 0.8s;
 }
 
-.galleryPhotos article img:hover{
+.galleryPhotos article img:hover, 
+video:hover{
     transform: scale(1.02);
+    box-shadow: 1px 1px 8px 0px  #312e2e;
+    opacity: 0.8;
 }
+
+
 .galleryPhotos h2{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #901C1C;
+    width: 85%;
 }
 .galleryPhotos article .title-likes{
     display: flex;
@@ -100,49 +148,36 @@ header .logo{
     font-weight: 400;
 }
 
-.galleryPhotos article .heart{
-   cursor: pointer;
-   transition: 0.5s;
+.galleryPhotos article .title-likes span{
+    font-size: 1.3rem;
 }
 
-.galleryPhotos article .heart:hover{
+.galleryPhotos article .title-likes span:hover{
     color: #DB8876;
 }
 
-.galleryPhotos article .heart:active{
+.galleryPhotos article .title-likes .heart-fas:focus{
+    color: #DB8876;
+}
+
+
+.galleryPhotos article .heart{
+   cursor: pointer;
+   transition: 0.5s;
+   font-size: 1.3rem;
+}
+
+
+/* .galleryPhotos article .heart:hover{
+    color: #DB8876;
+} */
+
+/* .galleryPhotos article .heart:active{
     transform: scale(1.5);
-}
-/************Like and price*************/
-aside{
-    width: 376px;
-    height: 69px;
-    background: #DB8876;
-    border-radius: 5px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.price-day{
-    font-size: 1.5rem;
-    font-weight: 500;
-}
+} */
 
-.heart-fas{
-    width: 17.5px;
-    height: 18.35px;
-}
-/************Fin des like and price*************/
 
-#contact_modal {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 100px;
-    width: 100%;
-}
+
 /*******Classes des erreurs du formulaire*********/
 .error span{
     opacity: 1;
@@ -159,8 +194,16 @@ aside{
     border: 3px solid rgb(5, 190, 5)
   }
 
-/*******Fin des classes des erreurs du formulaire*********/
 
+/*******************Modal formulaire******************/
+
+#contact_modal {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    width: 100%;
+}
 
 .contact_button {
     font-size: 1.2rem;
@@ -176,12 +219,13 @@ aside{
     position: absolute;
     bottom: 40%;
     right: 30%;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .contact_button:hover{
     background-color: #c03d1f;
-    color: #312E2E;
+    transform: scale(1.02);
+    box-shadow: 1px 1px 8px 0px  #312e2e;;
 }
 
 .contact_button:active{
@@ -269,11 +313,6 @@ form input {
 }
 
 
-/* form input:focus{
-    color: #D3573C;
-} */
-
-
 textarea{
     resize: none;
     font-size: 1.7rem;
@@ -293,6 +332,153 @@ textarea{
     }
   }
 
+  /**********Lightbox************/
+
+#contact_lightbox{
+    /* display: none; */
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    width: 100%;
+}
+
+.lightbox_container{
+    position: relative;
+    margin-left: 350px;
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+    position: absolute;
+    width: 50%;
+    height: 600px;
+    padding: 20px 0;
+    background-color: white;
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 10;
+    overflow: auto; /*pour pouvoir scroller l'image*/
+    animation-name: modalopen;
+    animation-duration: 0.8s;
+}
+
+.lightbox_next,
+.lightbox_prev{
+    border: none;
+    background: url(../src/assets/icons/arrow.svg) center center/30px 38px no-repeat;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -14px;
+    z-index: 11;
+    
+}
+
+
+.lightbox_prev{
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+.lightbox_close{
+    border: none;
+    background: url(../src/assets/icons/close.svg) center center/32px 32px no-repeat transparent;
+    width: 42px;
+    height: 42px;
+    top: 20px;
+    right: 20px;
+    z-index: 12;
+    position: absolute;
+}
+
+.lightbox button{
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    text-indent: -3000px; /*pour ne plus rendre visible le mot"précédent"*/
+}
+
+.lightbox button:hover{
+    opacity: 0.6;
+}
+
+.lightbox_container img{
+    /* max-width: 100%; */
+    width: 450px;
+    height: auto;
+    object-fit: cover;
+  /* visibility: hidden; */
+}
+
+.lightbox_container img .hidden{
+    /* display: none; */
+    visibility: hidden;
+}
+
+.lightbox_container video{
+    /* max-width: 100%; */
+    width: 450px;
+    height: auto;
+}
+
+/* .lightbox img{
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    object-fit: cover;
+}
+
+.lightbox video{
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+} */
+
+
+/************Like and price*************/
+footer{
+    width: 376px;
+    height: 69px;
+    background: #DB8876;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 30px;
+}
+
+footer h4{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.price-day{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+ footer .heart-fas{
+    font-size: 1.5rem;
+    margin-right: 70px;
+}
+
+  /**********Responsive***********/
+  
 @media screen and (max-width: 1220px){
     .galleryPhotos{
         display: grid;
