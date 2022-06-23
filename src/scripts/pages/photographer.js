@@ -16,7 +16,6 @@ async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
-        // const userCardDOM = photographerModel.userCardDOM();
         const userCardDomHeader = getCardHeader (photographer);
         
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDomHeader);
@@ -24,6 +23,9 @@ async function displayData(photographers) {
     });
 }
 
+/**
+ * Data photographers
+ */
 async function init() {
     const { photographers } = await getPhotographers();
    
