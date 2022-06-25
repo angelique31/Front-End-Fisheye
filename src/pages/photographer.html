@@ -16,8 +16,9 @@
   <body>
     <header>
       <a href="./index.html" tabindex="1">
-      <img src="../assets/images/logo.png" alt="Logo Fisheye Home page" class="logo"></a>
+        <img src="../assets/images/logo.png" alt="Logo Fisheye Home page" class="logo"></a>
     </header>
+
     <main  id="main" aria-hidden="false">
       <div class="photograph-header" aria-label="information photographer">
         
@@ -27,15 +28,11 @@
        <!-- Menu de tri -->
     <section  class="photograph_medias">
       <div class="sort" aria-label="sélecteur de tri des photos">
-          <h2>Trier par</h2>
-          <select class="menuSelect"  tabindex="1">
-              <!-- <option disabled="disabled"></option> -->
+          <label for="tri">Trier par</label>  
+          <select  class="menuSelect" id="tri"  tabindex="1">
               <option class="pop" value="pop" aria-label="popularité">Popularité</option>
-              <!-- <option disabled="disabled">──────────────────</option> -->
               <option class="date" value="date" aria-label="date">Date</option>
-              <!-- <option disabled="disabled">──────────────────</option> -->
               <option class="titre" value="titre" aria-label="titre">Titre</option>
-              <!-- <option disabled="disabled"></option> -->
           </select>
       </div>
     </section>
@@ -92,18 +89,20 @@
             <button class="lightbox_close">Fermer</button>
             <button class="lightbox_next">Suivant</button>
             <button class="lightbox_prev">Précédent</button>
-          </div>
+
+            <!-- <div class="lightbox-content"></div>
+          </div> -->
       </div>
     </aside>
     
     <footer aria-label="count likes & price">
       <h4 id="total_likes" aria-label="number of likes"></h4>
       <span class="like">
-        <i class="fas fa-heart heart-fas" aria-label="likes"></i>
+      <strong><i class="fas fa-heart heart-fas" aria-label="likes"></i></strong>
       </span>
       <span class="price-day" aria-label="price day"></span>
     </footer>
 
     <script src="/public/js/photographer.js"></script>
-  </body>
+   </body>
 </html>

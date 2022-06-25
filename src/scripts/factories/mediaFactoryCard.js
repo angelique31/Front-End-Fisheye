@@ -1,47 +1,47 @@
-import { openModal } from "../utils/lightbox";
 /**
- * Factory function (fonction des données des medias)
+ * Factory function (function data medias)
  * @param {*} data 
- * @returns - getUserCardDOM
+ * @returns - getUserCardDOM,  getUserCardLightbox
  */
  export function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
     
-    const picture = `../assets/medias/${photographerId}/${image} `;
-   
-    const videos = `../assets/medias/${photographerId}/${video} `;
-    
-    
+    const picture = `../assets/medias/${photographerId}/${image} `; // pourquoi 'url a été changé et fonctionnait plus?
+    const videos = `../assets/medias/${photographerId}/${video} `; // pourquoi 'url a été changé et fonctionnait plus?
+
     /**
-     * Fonction de la création des cartes des photographes 2e page
-     * @returns 
-     */
-    const getUserCardDOM = () => `
-                <article>
-                    <a href= "photographer.html?${photographerId}">
-                    ${video? `<video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
-                    :
-                        `<img src="${picture}" tabindex="1" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
- 
-                    </a>
-                    <div class=title-likes>
-                        <h2>${title}</h2>
-                        <span title="number of like picture">${likes}</span>
-                        <span class=like>
-                            <i class="fas fa-heart heart-fas" aria-label="likes" tabindex="1" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                </article>`;
+  Function card photographers 2nd page
+  * @returns 
+  */
+     const getUserCardDOM = () => `
+        <article>
+            <div id="media-${id}">
+                ${video? `<video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
+                :
+                `<img src="${picture}" tabindex="1" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
 
-                
+            </div>
+            <div class=title-likes>
+                <h2>${title}</h2>
+                <span title="number of like picture">${likes}</span>
+                <span class=like>
+                <strong><i class="fas fa-heart heart-fas" aria-label="likes" tabindex="1" aria-hidden="true"></i> </strong>
+                </span>
+            </div>
+        </article>`;
+
+  /**
+  * Function card lightbox
+  * @returns 
+  */           
     const getUserCardLightbox = () => `
-                <div onclick="openModal()">
-                    ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
-                    :
-                        `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
+            <div>
+                ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
+                :
+                `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
 
-                </div>
-                    <h2>${title}</h2>
-    `;
+            </div>
+            <h3>${title}</h3>`;
+
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
 }

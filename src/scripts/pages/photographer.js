@@ -3,7 +3,8 @@ import { mediaFactory } from '../factories/mediaFactoryCard';
 import { photographerFactory } from '../factories/photographerFactory';
 import   getCardHeader  from '../factories/photographerHeader';
 import {  } from "../form";
-import {closeModal, openModal } from "../utils/lightbox";
+import { openModalById } from "../utils/lightbox";
+
 import { numberLikes } from '../utils/likes';
 import { menuSelect, displayDataMedia } from '../utils/sort';
 
@@ -31,7 +32,7 @@ async function init() {
    
     const idRequest = window.location.href.split('?')[1];
     const photographer = await photographers.filter(photographer => photographer.id == idRequest);
-
+    
     displayData(photographer);
 }
 init();
@@ -47,7 +48,7 @@ init();
 export async function displayMedia(medias) {
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
-    const lightbox = document.querySelector('.lightbox_container')
+    const lightboxContainer = document.querySelector('.lightbox_container')
     let totalLikes = 0;
     
     medias.forEach((media) => {
@@ -57,12 +58,15 @@ export async function displayMedia(medias) {
 
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
 
-        lightbox.insertAdjacentHTML('beforeEnd', userCardLightbox);
+        lightboxContainer.insertAdjacentHTML('beforeEnd', userCardLightbox);
 
         totalLikes += media.likes;
 
         const  total_likes = document.querySelector('#total_likes')
         total_likes.innerHTML = totalLikes;
+
+        const { id } = media;
+        openModalById(`media-${id}`);
 
     });
     numberLikes();
@@ -75,8 +79,7 @@ export async function initMedias() {
    
     const idRequest = window.location.href.split('?')[1];
     const media =  await medias.filter(media => media.photographerId == idRequest);
-    // const media =  await medias.filter(
-    //     (media) => media.photographerId == idRequest,);
+    console.log(media)
 
     displayMedia(media);
 
