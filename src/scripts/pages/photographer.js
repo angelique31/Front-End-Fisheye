@@ -66,8 +66,9 @@ export async function displayMedia(medias) {
         total_likes.innerHTML = totalLikes;
 
         const { id } = media;
+        console.log(id)
         openModalById(`media-${id}`);
-
+        
     });
     numberLikes();
 }

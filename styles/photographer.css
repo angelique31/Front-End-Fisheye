@@ -338,7 +338,7 @@ textarea{
   /**********Lightbox************/
 
 #contact_lightbox{
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 70px;
     left: 100px;
