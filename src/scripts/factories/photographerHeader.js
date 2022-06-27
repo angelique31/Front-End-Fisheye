@@ -4,7 +4,7 @@
 */
     
 export default (photographer) => {
-    const {name, id, portrait, city, country, tagline, } = photographer;
+    const {name, portrait, city, country, tagline,} = photographer;
     const picture = `/src/assets/photographers/${portrait}`;
 
     return `
@@ -14,9 +14,6 @@ export default (photographer) => {
                 <h3>${city}, ${country}</h3>
                 <p>${tagline}</p>
             </div>
-                <a href= "photographer.html?${id}">
-                    <img src="${picture}" alt="${name}">
-                <a/>
-        
-        </article>`
+                <img src="${picture}" alt="${name}"
+            </article>`
  };

@@ -1,18 +1,18 @@
 const contactBtn = document.querySelector('.contact_button');
 const closeBtn = document.querySelector('.close');
 const modalbg = document.querySelector('#contact_modal');
-const main = document.querySelector('main')
-const firstName = document.querySelector('#first')
+const main = document.querySelector('main');
+const firstName = document.querySelector('#first');
 
 // 
 /**
  * open modale
  */
 function launchModal() {
-    main.setAttribute("aria-hidden", false);
-    modalbg.setAttribute("aria-hidden", true)
+    main.setAttribute('aria-hidden', false);
+    modalbg.setAttribute('aria-hidden', true);
     modalbg.style.display = 'block';
-    firstName.focus()
+    firstName.focus();
 }
 // modalbg.focus()  
 
@@ -206,12 +206,12 @@ const onSubmit = (e) => {
         return isValid;
     };
     
-   /**
+    /**
     * If valid
     */
     if (formIsValid(formValues(inputs))) {
         closeModal();
-        console.table (formValues(inputs))
+        console.table (formValues(inputs));
         form.querySelectorAll('.text-control').forEach(input => input.value = '');
         
     } else {
@@ -225,14 +225,14 @@ submitInput.addEventListener('click', (e) => onSubmit(e));
 /**
  * Close modale form with Escape
  */
-window.addEventListener("keyup", (e) => {
+window.addEventListener('keyup', (e) => {
     closeModalKey(e);
-  });
+});
   
-  function closeModalKey(e) {
-    if ((modalbg.style.display = "block" && e.key === "Escape")) {
-      closeModal();
+function closeModalKey(e) {
+    if ((modalbg.style.display = 'block' && e.key === 'Escape')) {
+        closeModal();
     }
-  }
+}
 
   

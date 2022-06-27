@@ -4,7 +4,6 @@ import { photographerFactory } from '../factories/photographerFactory';
 import   getCardHeader  from '../factories/photographerHeader';
 import {  } from "../form";
 import { openModalById } from "../utils/lightbox";
-
 import { numberLikes } from '../utils/likes';
 import { menuSelect, displayDataMedia } from '../utils/sort';
 
@@ -16,7 +15,7 @@ async function displayData(photographers) {
     const photographersSection = document.querySelector('.photograph-header');
 
     photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
+        photographerFactory(photographer);
         const userCardDomHeader = getCardHeader (photographer);
         
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDomHeader);
@@ -46,6 +45,7 @@ init();
  * @param {*} medias 
  */
 export async function displayMedia(medias) {
+   
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
     const lightboxContainer = document.querySelector('.lightbox_container')
@@ -66,8 +66,8 @@ export async function displayMedia(medias) {
         total_likes.innerHTML = totalLikes;
 
         const { id } = media;
-        console.log(id)
-        openModalById(`media-${id}`);
+       
+        openModalById(`media-${id}`, medias);
         
     });
     numberLikes();

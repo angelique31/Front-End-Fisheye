@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,7 @@
   </head>
   <body>
     <header>
-      <a href="./index.html" tabindex="1">
+      <a href="/index.html" tabindex="1">
         <img src="/src/assets/images/logo.png" alt="Logo Fisheye Home page" class="logo"></a>
     </header>
 
@@ -26,19 +25,16 @@
       </div>
 
        <!-- Menu de tri -->
-    <section  class="photograph_medias">
-      <div class="sort" aria-label="sélecteur de tri des photos">
+      <section  class="photograph_medias">
+        <div class="sort" aria-label="sélecteur de tri des photos">
           <label for="tri">Trier par</label>  
           <select  class="menuSelect" id="tri"  tabindex="1">
               <option class="pop" value="pop" aria-label="popularité">Popularité</option>
               <option class="date" value="date" aria-label="date">Date</option>
               <option class="titre" value="titre" aria-label="titre">Titre</option>
           </select>
-      </div>
-    </section>
-     <!-- Fin du Menu de tri -->
-
-
+        </div>
+      </section>
       
       <section  class="galleryPhotos" aria-label="gallery photos">
       </section>
@@ -89,16 +85,13 @@
             <button class="lightbox_close">Fermer</button>
             <button class="lightbox_next">Suivant</button>
             <button class="lightbox_prev">Précédent</button>
-
-            <!-- <div class="lightbox-content"></div>
-          </div> -->
       </div>
     </aside>
     
     <footer aria-label="count likes & price">
       <h4 id="total_likes" aria-label="number of likes"></h4>
       <span class="like">
-      <strong><i class="fas fa-heart heart-fas" aria-label="likes"></i></strong>
+      <strong class="fas fa-heart heart-fas" aria-label="likes"></strong>
       </span>
       <span class="price-day" aria-label="price day"></span>
     </footer>

@@ -1,4 +1,3 @@
-import { displayMedia, initMedias } from "../pages/photographer";
 const lightboxClose = document.querySelector('.lightbox_close');
 const lightboxContainer = document.querySelector('.lightbox_container');
 const lightbox = document.getElementById('contact_lightbox');
@@ -21,21 +20,45 @@ const lightbox = document.getElementById('contact_lightbox');
  * Génère un event en fonction du média
  * @param {string} id 
  */
- export function openModalById(id) {
-    const media = document.getElementById(id);
+ export function openModalById(id, medias) {
+    const component = document.getElementById(id);
     
-    if (media) {
-        media.addEventListener('click', openModal);
+    const displayLightBox = () => {
+        
+        openModal();
+        const idRequest = window.location.href.split('?')[1];
+        const mediaArray = component.id.split('-');
+        const id = mediaArray[1];
+        // console.log(id, idRequest, medias);
+        
+        const test = medias.filter(media => `${media.photographerId}` === idRequest);
+        // console.log(test,'resultat test');
+        // console.log('type de test',typeof medias[0].photographerId)
+        // console.log('type2 de test',typeof id)
+        let mediaSelected = 0;
+        for (let i = 0; i < test.length; i++) {
+            if (id === `${test[i].id}`) {
+                mediaSelected = i
+                // console.log('find');
+                break;
+                
+            };
+            // console.log(id, test[i], mediaSelected);
+            
+        }
+        console.log("le media selectionné par le user est à la position", mediaSelected,test )
+
+    };
+
+    if (component) {
+        component.addEventListener('click', displayLightBox);
     }
-     // affichage du contenu de la lightbox
-//     function displayLightBox() {
-//     // const initMedia = initMedias(media);
-//     // console.log(initMedia);
-//     // je récupere l'image qui à été cliquée en retriant "media" par l'id de l'image
-//     let displayimg = media.find(media => media.id === id);
     
-//    }
-//     displayLightBox()
+     
+    
+
+
+   
 }
 
 

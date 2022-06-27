@@ -6,8 +6,8 @@
  export function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
     
-    const picture = `/src/assets/medias/${photographerId}/${image} `; // pourquoi 'url a été changé et fonctionnait plus?
-    const videos = `/src/assets/medias/${photographerId}/${video} `; // pourquoi 'url a été changé et fonctionnait plus?
+    const picture = `/src/assets/medias/${photographerId}/${image} `; 
+    const videos = `/src/assets/medias/${photographerId}/${video} `; 
 
     /**
   Function card photographers 2nd page
@@ -25,7 +25,7 @@
                 <h2>${title}</h2>
                 <span title="number of like picture">${likes}</span>
                 <span class=like>
-                <strong><i class="fas fa-heart heart-fas" aria-label="likes" tabindex="1" aria-hidden="true"></i> </strong>
+                <strong class="fas fa-heart heart-fas" aria-label="likes" tabindex="1" aria-hidden="true"></strong>
                 </span>
             </div>
         </article>`;
