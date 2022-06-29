@@ -5,6 +5,8 @@ const lightbox = document.getElementById('contact_lightbox');
 
  function closeModal() {
     lightbox.style.display = 'none'; 
+    // lightboxContainer.innerHTML = "";
+
 }
 
     
@@ -24,29 +26,23 @@ const lightbox = document.getElementById('contact_lightbox');
     const component = document.getElementById(id);
     
     const displayLightBox = () => {
-        
         openModal();
         const idRequest = window.location.href.split('?')[1];
         const mediaArray = component.id.split('-');
         const id = mediaArray[1];
-        // console.log(id, idRequest, medias);
         
         const test = medias.filter(media => `${media.photographerId}` === idRequest);
-        // console.log(test,'resultat test');
-        // console.log('type de test',typeof medias[0].photographerId)
-        // console.log('type2 de test',typeof id)
+        
         let mediaSelected = 0;
         for (let i = 0; i < test.length; i++) {
             if (id === `${test[i].id}`) {
                 mediaSelected = i
-                // console.log('find');
                 break;
-                
             };
-            // console.log(id, test[i], mediaSelected);
             
         }
-        console.log("le media selectionné par le user est à la position", mediaSelected,test )
+        console.log("le media selectionné par le user est à la position", mediaSelected )
+        
 
     };
 
