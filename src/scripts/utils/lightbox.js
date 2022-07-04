@@ -27,16 +27,19 @@ export function openModal() {
         const mediaArray = component.id.split('-');
         const id = mediaArray[1];
         // console.log(id)
-        const test = medias.filter(media => `${media.photographerId}` === idRequest);
-        // console.log(test)
+        const filterMedia = medias.filter(media => `${media.photographerId}` === idRequest);
+        // console.log(filterMedia)
         let mediaSelected = 0;
-        for (let i = 0; i < test.length; i++) {
-            if (id === `${test[i].id}`) {
+        for (let i = 0; i < filterMedia.length; i++) {
+            if (id === `${filterMedia[i].id}`) {
                 mediaSelected = i
                 break;
             };
+            // console.log(filterMedia[i])
         }
         console.log("le media selectionné par le user est à la position", mediaSelected )
+        
+        // Au clic sur la photo, on fait apparaitre la photo qui correspond à la photo cliquée sur "galleryPhotos"
         
         
     };

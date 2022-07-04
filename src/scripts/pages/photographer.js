@@ -1,7 +1,7 @@
 import { getPhotographers, getMedias } from '../utils/api';
-import { mediaFactory } from '../factories/mediaFactoryCard';
-import { photographerFactory } from '../factories/photographerFactory';
-import   getCardHeader  from '../factories/photographerHeader';
+import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
+import { photographerFactory } from '../factories/pagePhotographer/photographerFactory';
+import   getCardHeader  from '../factories/pagePhotographer/photographerHeader';
 import {  } from "../form";
 import { openModalById } from "../utils/lightbox";
 import { numberLikes } from '../utils/likes';

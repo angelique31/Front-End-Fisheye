@@ -14,7 +14,6 @@
 
 }
 
-
 /**
  * Fonction pour récupérer les données des medias
  * @returns media

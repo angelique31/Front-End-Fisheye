@@ -1,5 +1,5 @@
 import {getPhotographers} from '../utils/api';
-import getCard from '../factories/photographersPageDom';
+import getCard from '../factories/homePhotographer';
 import '../../../styles/style.css';
 
 
