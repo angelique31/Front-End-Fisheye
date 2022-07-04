@@ -1,11 +1,14 @@
+import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
+
 const lightboxClose = document.querySelector('.lightbox_close');
-// const lightboxContainer = document.querySelector('.lightbox_container');
+const lightboxContainer = document.querySelector('.lightbox_container');
 const lightbox = document.getElementById('contact_lightbox');
 
 
 function closeModal() {
     lightbox.style.display = 'none'; 
-}
+    
+}   
 
 export function openModal() {
     const lightbox = document.getElementById('contact_lightbox');
@@ -39,7 +42,12 @@ export function openModal() {
         }
         console.log("le media selectionné par le user est à la position", mediaSelected )
         
-        // Au clic sur la photo, on fait apparaitre la photo qui correspond à la photo cliquée sur "galleryPhotos"
+        
+        const photographerModel = mediaFactory(medias[mediaSelected]);
+        console.log(photographerModel)
+        const userCardLightbox = photographerModel.getUserCardLightbox();
+        console.log(userCardLightbox)
+        lightboxContainer.insertAdjacentHTML('afterbegin', userCardLightbox);
         
         
     };

@@ -45,7 +45,6 @@ const inputs = document.querySelectorAll(
  */
 inputs.forEach((input) => {
     input.addEventListener('input', (e) => {
-        // console.log(e.target.value);
         switch (e.target.id) {
         case 'first':
             firstChecker(e.target.value);

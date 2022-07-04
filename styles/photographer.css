@@ -11,7 +11,8 @@ body {
 
 header .logo{
     height: 50px;
-    margin: 10px 0 20px 100px;
+    /* margin: 10px 0 20px 100px; */
+    margin-left: 100px;
     cursor: pointer;
 }
 .photograph-header{
@@ -312,7 +313,6 @@ form input {
     border: none;
     border-radius: 5px;
     font-size: 2rem;
-    outline: none;
 }
 
 
@@ -338,7 +338,7 @@ textarea{
   /**********Lightbox************/
 
 #contact_lightbox{
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 70px;
     left: 100px;

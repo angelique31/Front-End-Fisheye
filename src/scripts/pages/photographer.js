@@ -48,17 +48,15 @@ export async function displayMedia(medias) {
    
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
-    const lightboxContainer = document.querySelector('.lightbox_container')
+    
     let totalLikes = 0;
     
     medias.forEach((media) => {
         const photographerModel = mediaFactory(media);
         const userCardDOM = photographerModel.getUserCardDOM();
-        const userCardLightbox = photographerModel.getUserCardLightbox();
+        
 
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
-
-        lightboxContainer.insertAdjacentHTML('beforeEnd', userCardLightbox);
 
         totalLikes += media.likes;
 

@@ -18,14 +18,14 @@
             <div id="media-${id}">
                 ${video? `<video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
                 :
-                `<img src="${picture}" tabindex="1" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
+                `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
 
             </div>
             <div class=title-likes>
                 <h2>${title}</h2>
                 <span title="number of like picture">${likes}</span>
                 <span class=like>
-                <strong class="fas fa-heart heart-fas" aria-label="likes" tabindex="1" aria-hidden="true"></strong>
+                <strong class="fas fa-heart heart-fas" aria-label="likes" tabindex="0" aria-hidden="true"></strong>
                 </span>
             </div>
         </article>`;
@@ -35,12 +35,12 @@
   * @returns 
   */           
     const getUserCardLightbox = () => `
-            <div>
+            
                 ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
                 :
                 `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
 
-            </div>
+            
             <h3>${title}</h3>`;
 
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
