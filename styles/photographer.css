@@ -207,6 +207,7 @@ video:hover{
     top: 70px;
     left: 100px;
     width: 100%;
+    z-index: 8;
 }
 
 .contact_button {
@@ -346,18 +347,8 @@ textarea{
 }
 
 .lightbox_container{
-    position: relative;
     margin-left: 350px;
-    margin-top: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* display: none; */
-    position: absolute;
-    width: 50%;
-    height: 600px;
-    padding: 20px 0;
-    background-color: white;
+    margin-top: 150px;   
 }
 
 .lightbox{
@@ -366,11 +357,14 @@ textarea{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: white;
     z-index: 10;
-    overflow: auto; /*pour pouvoir scroller l'image*/
+    /* overflow: auto;  */
     animation-name: modalopen;
     animation-duration: 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lightbox_next,
@@ -396,7 +390,7 @@ textarea{
 
 .lightbox_close{
     border: none;
-    background: url(../src/assets/icons/close.svg) center center/32px 32px no-repeat transparent;
+    background: url(/src/assets/icons/close_lightbox.svg) center center/32px 32px no-repeat transparent;
     width: 42px;
     height: 42px;
     top: 20px;
@@ -409,7 +403,8 @@ textarea{
     opacity: 1;
     cursor: pointer;
     transition: 0.3s;
-    text-indent: -3000px; /*pour ne plus rendre visible le mot"précédent"*/
+    /* text-indent: -4000px; */
+    color: transparent;
 }
 
 .lightbox button:hover{
@@ -417,11 +412,10 @@ textarea{
 }
 
 .lightbox_container img{
-    /* max-width: 100%; */
-    width: 450px;
+    max-width: 100%;
+    width: 40%;
     height: auto;
     object-fit: cover;
-  /* visibility: hidden; */
 }
 
 .lightbox_container img .hidden{
@@ -431,22 +425,9 @@ textarea{
 
 .lightbox_container video{
     /* max-width: 100%; */
-    width: 450px;
+    width: 50%;
     height: auto;
 }
-
-/* .lightbox img{
-    max-width: 100%;
-    width: 450px;
-    height: auto;
-    object-fit: cover;
-}
-
-.lightbox video{
-    max-width: 100%;
-    width: 450px;
-    height: auto;
-} */
 
 
 /************Like and price*************/

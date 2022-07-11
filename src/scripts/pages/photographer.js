@@ -49,6 +49,7 @@ export async function displayMedia(medias) {
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
     
+    
     let totalLikes = 0;
     
     medias.forEach((media) => {
@@ -62,9 +63,9 @@ export async function displayMedia(medias) {
 
         const  total_likes = document.querySelector('#total_likes')
         total_likes.innerHTML = totalLikes;
+        
 
         const { id } = media;
-       
         openModalById(`media-${id}`, medias);
         
     });
@@ -78,7 +79,7 @@ export async function initMedias() {
    
     const idRequest = window.location.href.split('?')[1];
     const media =  await medias.filter(media => media.photographerId == idRequest);
-    console.log(media)
+    // console.log(media)
 
     displayMedia(media);
 
