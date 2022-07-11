@@ -4,12 +4,9 @@ const lightboxClose = document.querySelector('.lightbox_close');
 const lightboxContainer = document.querySelector('.lightbox_container');
 const lightbox = document.getElementById('contact_lightbox');
 
-
 function closeModal() {
     lightbox.style.display = 'none';
-    
     const lightboxContainer = document.querySelector('.lightbox_container');
-    
     lightboxContainer.innerHTML = "";
 }   
 
@@ -22,33 +19,42 @@ export function openModal() {
 }
 
 function navModal(medias, position) {
-    
     const next = document.getElementsByClassName('lightbox_next')[0];
     const prev = document.getElementsByClassName('lightbox_prev')[0];
-    
+    const numberSlide = medias.length;
+    let count = 0;
 
     const navTo = (medias, position, type) => {
         console.log(medias, position, type)
     }
 
     const navNext = () => {
-        navTo (medias, position, 'next')
-       
+        navTo (medias, position, 'next');
+        
+        if (count < numberSlide -1) {
+            count ++;
+        } else {
+            count = 0
+        }
+        console.log (count)
     }
-    
     
     const navPrev = () => {
-        navTo (medias, position, 'prev')
+        navTo (medias, position, 'prev');
        
+        if (count > 0) {
+            count --;
+        } else {
+            count = numberSlide -1;
+        }
+        console.log (count);
     }
-    
     
     if (next && prev){
     next.addEventListener('click', navNext);
     prev.addEventListener('click', navPrev);
     }
 }
-
 
 /**
  * Génère un event en fonction du média
@@ -59,7 +65,7 @@ function navModal(medias, position) {
     // console.log(component)
     const displayLightBox = () => {
         openModal();
-        // console.log(medias)
+        
         const idRequest = window.location.href.split('?')[1];
         const mediaArray = component.id.split('-');
         const id = mediaArray[1];
@@ -84,8 +90,6 @@ function navModal(medias, position) {
         // console.log(userCardLightbox)
         lightboxContainer.insertAdjacentHTML('afterbegin', userCardLightbox);
         
-        
-        
         navModal(medias, mediaSelected)
     }; 
 
@@ -95,9 +99,6 @@ function navModal(medias, position) {
 }
    
 lightboxClose.addEventListener('click', closeModal);
-
-
-
 
 /**
  * Close modale form with Escape
