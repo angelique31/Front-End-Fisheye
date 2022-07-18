@@ -35,13 +35,11 @@
   * @returns 
   */           
     const getUserCardLightbox = () => `
-            <div class="slide hide">
+            <div class="slide_hide">
                 ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
                 :
                 `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
-
-            
-            <h3>${title}</h3>
+                <h3>${title}</h3>
             </div>`;
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
 }

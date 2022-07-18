@@ -1,6 +1,6 @@
 /**
- * Fonction pour récupérer les données des photographes
- * @returns 
+ * Function to retrieve data from photographers
+ * @returns data photographers
  */
  export async function getPhotographers() {
     return fetch ('../../data/photographers.json')
@@ -8,15 +8,14 @@
             return res.json();
         })
         .then((datas) => {
-            // console.log(datas);
             return datas;
         }); 
 
 }
 
 /**
- * Fonction pour récupérer les données des medias
- * @returns media
+ * Function to retrieve data from medias
+ * @returns data media
  */
  export async function getMedias() {
     return fetch ('../../data/photographers.json')
@@ -24,7 +23,6 @@
             return res.json();
         })
         .then((datas) => {
-            //  console.log(datas.media);
             return datas.media;
         }); 
 }

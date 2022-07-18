@@ -41,14 +41,13 @@ init();
 /*********************************************************/ 
 
 /**
- * Fonction pour afficher les données des medias
+ * function to display medias data
  * @param {*} medias 
  */
 export async function displayMedia(medias) {
    
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
-    
     
     let totalLikes = 0;
     
@@ -72,14 +71,15 @@ export async function displayMedia(medias) {
     numberLikes();
 }
 
-
-
+/**
+ * Datas medias
+*/
 export async function initMedias() {
     const  medias  = await getMedias();
    
     const idRequest = window.location.href.split('?')[1];
     const media =  await medias.filter(media => media.photographerId == idRequest);
-    // console.log(media)
+   
 
     displayMedia(media);
 

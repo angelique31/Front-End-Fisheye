@@ -26,13 +26,14 @@ function navModal(medias, position) {
 
     const navTo = (medias, position, type) => {
         console.log(medias, position, type)
+        
     }
 
     const navNext = () => {
         navTo (medias, position, 'next');
         
         if (count < numberSlide -1) {
-            count ++;
+            count ++
         } else {
             count = 0
         }
@@ -43,7 +44,7 @@ function navModal(medias, position) {
         navTo (medias, position, 'prev');
        
         if (count > 0) {
-            count --;
+            count --
         } else {
             count = numberSlide -1;
         }
@@ -57,7 +58,7 @@ function navModal(medias, position) {
 }
 
 /**
- * Génère un event en fonction du média
+ *Generates an event depending on the media
  * @param {string} id 
  */
  export function openModalById(id, medias) {

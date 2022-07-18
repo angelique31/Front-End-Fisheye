@@ -4,7 +4,7 @@ import '../../../styles/style.css';
 
 
 /**
- * Fonction pour afficher les données
+ * Function display data photographers
  * @param {*} photographers 
  */
 async function displayData(photographers) {

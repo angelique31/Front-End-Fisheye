@@ -7,7 +7,9 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    width: 100%
 }
+
 
 header .logo{
     height: 50px;
@@ -15,6 +17,7 @@ header .logo{
     margin-left: 100px;
     cursor: pointer;
 }
+
 .photograph-header{
     position: relative;
     background-color: #FAFAFA;
@@ -347,7 +350,7 @@ textarea{
 }
 
 .lightbox_container{
-    margin-left: 350px;
+    /* margin-left: 300px; */
     margin-top: 150px;   
 }
 
@@ -375,7 +378,7 @@ textarea{
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 70px;
     margin-top: -14px;
     z-index: 11;
     
@@ -394,7 +397,7 @@ textarea{
     width: 42px;
     height: 42px;
     top: 20px;
-    right: 20px;
+    right: 80px;
     z-index: 12;
     position: absolute;
 }
@@ -413,9 +416,10 @@ textarea{
 
 .lightbox_container img{
     max-width: 100%;
-    width: 40%;
-    height: auto;
+    width: 100%;
+    height: 500px;
     object-fit: cover;
+    margin: auto;
 }
 
 .lightbox_container img .hidden{
@@ -424,9 +428,16 @@ textarea{
 }
 
 .lightbox_container video{
-    /* max-width: 100%; */
-    width: 50%;
-    height: auto;
+    max-width: 100%;
+    width: 100%;
+    height: 500px;
+    margin: auto;
+}
+
+.lightbox_container .slide_hide{
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 
