@@ -94,9 +94,10 @@ header .logo{
 }
 
 .menuSelect:hover{
-    background-color: #c03d1f;
+    background-color: #D3573C;
     transform: scale(1.02);
     box-shadow: 1px 1px 8px 0px  #312e2e;
+    color: black;
 }
 
 .fa-chevron-up{
@@ -174,6 +175,17 @@ video:hover{
    font-size: 1.3rem;
 }
 
+.galleryPhotos article{
+    position: relative;
+}
+.galleryPhotos article .fa-play-circle{
+    color: #fff4f4de;
+    position: absolute;
+    font-size: 3rem;
+    right: 130px;
+    bottom: 150px;
+}
+
 
 /* .galleryPhotos article .heart:hover{
     color: #DB8876;
@@ -231,9 +243,10 @@ video:hover{
 }
 
 .contact_button:hover{
-    background-color: #c03d1f;
+    background-color: #D3573C;
     transform: scale(1.02);
-    box-shadow: 1px 1px 8px 0px  #312e2e;;
+    box-shadow: 1px 1px 8px 0px  #312e2e;
+    color: black;
 }
 
 .contact_button:active{
@@ -387,7 +400,7 @@ textarea{
 
 .lightbox_prev{
     right: auto;
-    left: 0;
+    left: 20px;
     transform: rotate(180deg);
   }
 
@@ -417,7 +430,7 @@ textarea{
 .lightbox_container img{
     max-width: 100%;
     width: 100%;
-    height: 500px;
+    height: 450px;
     object-fit: cover;
     margin: auto;
 }
@@ -440,6 +453,9 @@ textarea{
     flex-direction: column;
 }
 
+.lightbox_container h3{
+    color: #901C1C;
+}
 
 /************Like and price*************/
 footer{

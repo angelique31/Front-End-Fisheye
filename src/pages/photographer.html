@@ -22,14 +22,14 @@
     <main  id="main" aria-hidden="false">
       <div class="photograph-header" aria-label="information photographer">
         
-        <button class="btn-signup contact_button"  tabindex="0">Contactez-moi</button>
+        <button class="btn-signup contact_button" alt="Contact Me"  tabindex="0">Contactez-moi</button>
       </div>
 
        <!-- Menu de tri -->
       <section  class="photograph_medias">
         <div class="sort" aria-label="sélecteur de tri des photos">
           <label for="tri">Trier par</label>  
-          <select  class="menuSelect" id="tri"  tabindex="0">
+          <select  class="menuSelect" id="tri" aria-labelledby="OrderBy" tabindex="0">
               <option class="pop" value="pop" aria-label="popularité">Popularité</option>
               <option class="date" value="date" aria-label="date">Date</option>
               <option class="titre" value="titre" aria-label="titre">Titre</option>
@@ -54,25 +54,25 @@
 
 					    <div class="formData first-container">
 						    <label for="first" tabindex="0">Prénom</label><br>
-                <input class="text-control"  aria-label="Enter your first name" type="text" id="first" name="first" minlength="2" placeholder="votre prénom ici"  autocomplete="off" required /><br>
+                <input class="text-control"  aria-labelledby="firstName" type="text" id="first" name="first" minlength="2" placeholder="votre prénom ici"  autocomplete="off" required /><br>
                 <span></span>
 						  </div>
 
               <div class="formData last-container">
                 <label for="last" tabindex="0">Nom</label><br>
-                <input class="text-control" aria-label="Enter your name" type="text" id="last" name="last"  minlength="2" placeholder="votre nom ici"  autocomplete="off" required><br>
+                <input class="text-control" aria-labelledby="lastName" type="text" id="last" name="last"  minlength="2" placeholder="votre nom ici"  autocomplete="off" required><br>
                 <span></span>
               </div>
 
               <div class="formData email-container">
                 <label for="email" tabindex="0">Email</label><br>
-                <input class="text-control" aria-label="Enter your e-mail adress" type="email" id="email" name="email" placeholder="Ex:email@domaine.com" autocomplete="off" required/><br>
+                <input class="text-control" aria-labelledby="Email" type="email" id="email" name="email" placeholder="Ex:email@domaine.com" autocomplete="off" required/><br>
                 <span></span>
               </div>
 
               <div class=" formaData message-container">
                 <label for="message" tabindex="0">Votre message</label><br>
-                <textarea class="text-control" aria-label="Enter your message" name="message" id="message" rows="10" cols="38" placeholder="Votre message ici" autocomplete="off" required></textarea>      
+                <textarea class="text-control" aria-labelledby="yourMessage" name="message" id="message" rows="10" cols="38" placeholder="Votre message ici" autocomplete="off" required></textarea>      
                 <span></span>
               </div>
               <input class="contact_button_form" type="submit"  aria-label="send the form" tabindex="0"  value="Envoyer">
@@ -81,21 +81,18 @@
 		    </div>
     </main>
     
-    <aside role="dialog"  id="contact_lightbox" aria-hidden="true">
+    <aside role="dialog"  id="contact_lightbox" aria-label="image closeup view" aria-hidden="true">
       <div class="lightbox">
          
-            <button class="lightbox_close">Fermer</button>
-            <button class="lightbox_next">Suivant</button>
-            <button class="lightbox_prev">Précédent</button>
+            <button class="lightbox_close" aria-label="close dialog">Fermer</button>
+            <button class="lightbox_next" aria-label="next image">Suivant</button>
+            <button class="lightbox_prev" aria-label="previous image">Précédent</button>
           <div class="lightbox_container"></div>
       </div>
     </aside>
     
     <footer aria-label="count likes & price">
       <h4 id="total_likes" aria-label="number of likes"></h4>
-      <span class="like">
-      <strong class="fas fa-heart heart-fas" aria-label="likes"></strong>
-      </span>
       <span class="price-day" aria-label="price day"></span>
     </footer>
 

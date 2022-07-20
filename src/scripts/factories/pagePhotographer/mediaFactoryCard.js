@@ -16,7 +16,7 @@
      const getUserCardDOM = () => `
         <article>
             <div id="media-${id}">
-                ${video? `<video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
+                ${video? `<strong class="far fa-play-circle"></strong><video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
                 :
                 `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
 
