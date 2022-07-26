@@ -91,22 +91,45 @@ header .logo{
     padding-left: 20px;
     transition: 0.8s;
     cursor: pointer;
+    
 }
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("../src/assets/icons/chevron-down.svg")  no-repeat 90% #901C1C;
+    border: none;
+    color: white;
+    padding: 2%;
+    font-weight: 500;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+/* change le natif*/
+/* option[disabled] {
+    color: #c9c9c9;
+  } */
+  
+  .actived {
+    background: url("../src/assets/icons/chevron-up.svg")  no-repeat 90%;
+
+  }
 
 .menuSelect:hover{
-    background-color: #D3573C;
+    background-color:  #901C1C;
     transform: scale(1.02);
     box-shadow: 1px 1px 8px 0px  #312e2e;
-    color: black;
+    
 }
 
-.fa-chevron-up{
+/* .fa-chevron-up{
     display: none;
 }
 
 .fa-chevron-down{
     display: flex;
-}
+} */
 
 .pop, .date, .titre{
     font-size: 1.3rem;   
@@ -375,7 +398,6 @@ textarea{
     height: 100%;
     background-color: white;
     z-index: 10;
-    /* overflow: auto;  */
     animation-name: modalopen;
     animation-duration: 0.8s;
     display: flex;

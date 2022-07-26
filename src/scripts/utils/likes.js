@@ -5,8 +5,8 @@ export function numberLikes() {
         e.addEventListener('click', function () {
             const numberLike = e.parentElement.children[1];
             numberLike.textContent++;
-            total_likes.textContent++; // j'ajoute 1 au total des totalLikes du footer
-           
+            
+            total_likes.textContent++;
         });
     });
 

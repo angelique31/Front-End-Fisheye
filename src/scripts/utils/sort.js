@@ -1,6 +1,11 @@
 import { displayMedia } from '../pages/photographer';
 export const menuSelect = document.querySelector(".menuSelect");
-   
+
+const sorted = document.querySelector("#sorted");
+sorted.addEventListener('click',(e) => {
+  sorted.classList.toggle("actived")
+})
+
 export function displayDataMedia(media){
     let newArrMedia;
     switch (menuSelect.value) {
@@ -26,3 +31,4 @@ export function displayDataMedia(media){
           break;
       }
 }
+

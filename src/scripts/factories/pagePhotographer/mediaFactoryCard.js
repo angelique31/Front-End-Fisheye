@@ -16,11 +16,11 @@
      const getUserCardDOM = () => `
         <article>
             <div id="media-${id}">
-                ${video? `<strong class="far fa-play-circle"></strong><video><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
+                ${video? `<strong class="far fa-play-circle"></strong><video><source src="${videos}" type="video/mp4" title="video de ${title}" tabindex="0"></video>` 
                 :
                 `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
-
             </div>
+    
             <div class=title-likes>
                 <h2>${title}</h2>
                 <span title="number of like picture">${likes}</span>

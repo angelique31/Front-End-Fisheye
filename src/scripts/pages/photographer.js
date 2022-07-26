@@ -49,6 +49,7 @@ export async function displayMedia(medias) {
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
     
+    
     let totalLikes = 0;
     
     medias.forEach((media) => {

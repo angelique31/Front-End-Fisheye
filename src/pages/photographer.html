@@ -25,11 +25,11 @@
         <button class="btn-signup contact_button" alt="Contact Me"  tabindex="0">Contactez-moi</button>
       </div>
 
-       <!-- Menu de tri -->
+       <!-- Sort  -->
       <section  class="photograph_medias">
         <div class="sort" aria-label="sélecteur de tri des photos">
           <label for="tri">Trier par</label>  
-          <select  class="menuSelect" id="tri" aria-labelledby="OrderBy" tabindex="0">
+          <select  class="menuSelect" id="sorted" aria-labelledby="OrderBy" tabindex="0">
               <option class="pop" value="pop" aria-label="popularité">Popularité</option>
               <option class="date" value="date" aria-label="date">Date</option>
               <option class="titre" value="titre" aria-label="titre">Titre</option>
@@ -38,9 +38,11 @@
       </section>
 
       
+      
       <section  class="galleryPhotos" aria-label="gallery photos">
       </section>
-     
+      
+      <!-- Form -->
         <div id="contact_modal"   aria-hidden="true" tabindex="-1"  aria-label="modal transparent background">
 			    <div class="modal" role="dialog">
 				    <header>
@@ -81,9 +83,9 @@
 		    </div>
     </main>
     
+    <!-- Lightbox -->
     <aside role="dialog"  id="contact_lightbox" aria-label="image closeup view" aria-hidden="true">
       <div class="lightbox">
-         
             <button class="lightbox_close" aria-label="close dialog">Fermer</button>
             <button class="lightbox_next" aria-label="next image">Suivant</button>
             <button class="lightbox_prev" aria-label="previous image">Précédent</button>
@@ -93,6 +95,9 @@
     
     <footer aria-label="count likes & price">
       <h4 id="total_likes" aria-label="number of likes"></h4>
+      <span class="like">
+        <i class="fas fa-heart heart-fas"></i>
+      </span>
       <span class="price-day" aria-label="price day"></span>
     </footer>
 

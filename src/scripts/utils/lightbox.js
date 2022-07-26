@@ -1,5 +1,5 @@
 import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
-
+import { lightboxCard } from '../factories/pagePhotographer/lightboxCard';
 const lightboxClose = document.querySelector('.lightbox_close');
 const lightboxContainer = document.querySelector('.lightbox_container');
 const lightbox = document.getElementById('contact_lightbox');
@@ -18,43 +18,60 @@ export function openModal() {
     }
 }
 
-function navModal(medias, position) {
+function navModal(medias) {
     const next = document.getElementsByClassName('lightbox_next')[0];
     const prev = document.getElementsByClassName('lightbox_prev')[0];
     const numberSlide = medias.length;
     let count = 0;
 
-    const navTo = (medias, position, type) => {
-        console.log(medias, position, type)
-        
+    const showCard = (card) => {
+      const lightbox = document.getElementsByClassName("slide_hide")[0];
+      lightbox.innerHTML = card;
     }
-
     const navNext = () => {
-        navTo (medias, position, 'next');
         
         if (count < numberSlide -1) {
-            count ++
+            count ++;
         } else {
-            count = 0
+            count = 0;
         }
-        console.log (count)
+        showCard(lightboxCard(medias[count]));
     }
     
     const navPrev = () => {
-        navTo (medias, position, 'prev');
-       
+        
         if (count > 0) {
-            count --
+            count --;
         } else {
             count = numberSlide -1;
         }
-        console.log (count);
+        showCard(lightboxCard(medias[count]));
     }
     
     if (next && prev){
     next.addEventListener('click', navNext);
     prev.addEventListener('click', navPrev);
     }
+
+    document.addEventListener('keyup', (e) =>{
+        switch(e.key)
+        {
+            case "ArrowLeft" :
+                navPrev(); 
+                break; 
+            case "ArrowRight": 
+                navNext();
+                break; 
+            case "Escape" : 
+            closeModal(); 
+                break; 
+            // case "Enter" :
+            // openModal();
+            //     break;
+        }
+        console.log(e.key)
+    })
+    
 }
 
 /**
@@ -109,9 +126,19 @@ lightboxClose.addEventListener('click', closeModal);
 });
   
 function closeModalKey(e) {
-    if ((lightbox.style.display = 'block' && e.key === 'Escape')) {
+    if ((lightbox.style.display = 'none' && e.key === 'Escape')) {
         closeModal();
     }
 }
+
+// lightbox.addEventListener('keyup', (e) => {
+//     openModalKey(e);
+// });
+  
+// function openModalKey(e) {
+//     if ((lightbox.style.display = 'block' && e.key === 'Enter')) {
+//         openModal();
+//     }
+// }
 
 

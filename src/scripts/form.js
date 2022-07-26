@@ -1,7 +1,6 @@
 const contactBtn = document.querySelector('.contact_button');
 const closeBtn = document.querySelector('.close');
 const modalbg = document.querySelector('#contact_modal');
-const main = document.querySelector('main');
 const firstName = document.querySelector('#first');
 
 // 
@@ -9,12 +8,10 @@ const firstName = document.querySelector('#first');
  * open modale
  */
 function launchModal() {
-    main.setAttribute('aria-hidden', false);
-    modalbg.setAttribute('aria-hidden', true);
     modalbg.style.display = 'block';
     firstName.focus();
 }
-// modalbg.focus()  
+ 
 
 contactBtn.addEventListener('click', launchModal);
 
