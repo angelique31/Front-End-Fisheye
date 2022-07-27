@@ -63,10 +63,11 @@ function navModal(medias) {
                 navNext();
                 break; 
             case "Escape" : 
-            closeModal(); 
+                closeModal(); 
                 break; 
             // case "Enter" :
-            // openModal();
+            //     console.log("Enter")
+            //     openModal();
             //     break;
         }
         console.log(e.key)
@@ -87,9 +88,8 @@ function navModal(medias) {
         const idRequest = window.location.href.split('?')[1];
         const mediaArray = component.id.split('-');
         const id = mediaArray[1];
-        // console.log(id)
         const filterMedia = medias.filter(media => `${media.photographerId}` === idRequest);
-        // console.log(filterMedia)
+    
         let mediaSelected = 0;
         for (let i = 0; i < filterMedia.length; i++) {
             if (id === `${filterMedia[i].id}`) {
@@ -99,7 +99,7 @@ function navModal(medias) {
             // console.log(filterMedia[i].id)
         }
         console.log("le media selectionné par le user est à la position", mediaSelected )
-        // console.log(mediaSelected)
+        
         
 
         const photographerModel = mediaFactory(medias[mediaSelected]);
@@ -131,7 +131,7 @@ function closeModalKey(e) {
     }
 }
 
-// lightbox.addEventListener('keyup', (e) => {
+// window.addEventListener('keyup', (e) => {
 //     openModalKey(e);
 // });
   
