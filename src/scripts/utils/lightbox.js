@@ -28,23 +28,43 @@ function navModal(medias) {
       const lightbox = document.getElementsByClassName("slide_hide")[0];
       lightbox.innerHTML = card;
     }
+
+    const getPosition = (medias) => {
+        const lightbox = document.getElementsByClassName("slide_hide")[0];
+        const currentId = lightbox.children[0].id;
+        console.log(currentId)
+        let mediaSelected = 0;
+        for (let i = 0; i < medias.length; i++) {
+            if (`${currentId}` === `${medias[i].id}`) {
+                mediaSelected = i
+                break;
+            };
+            console.log(medias[i].id)
+        }
+        return mediaSelected;
+       
+    };
+
     const navNext = () => {
-        
+    
+        count = getPosition(medias)   
         if (count < numberSlide -1) {
             count ++;
         } else {
             count = 0;
         }
+        console.log('debug', medias, count, medias[count])
         showCard(lightboxCard(medias[count]));
     }
     
     const navPrev = () => {
-        
+        count = getPosition(medias)    
         if (count > 0) {
             count --;
         } else {
             count = numberSlide -1;
         }
+        console.log('debug', medias, count, medias[count])
         showCard(lightboxCard(medias[count]));
     }
     
