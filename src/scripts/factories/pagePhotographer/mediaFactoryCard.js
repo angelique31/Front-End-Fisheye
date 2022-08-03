@@ -25,7 +25,7 @@
                 <h2>${title}</h2>
                 <span title="number of like picture">${likes}</span>
                 <span class=like aria-label="likes">
-                <strong class="fas fa-heart heart-fas" aria-label="likes" tabindex="0" aria-hidden="true"></strong>
+                <strong class="fas fa-heart heart-fas" aria-label="likes" aria-hidden="true"></strong>
                 </span>
             </div>
         </article>`;

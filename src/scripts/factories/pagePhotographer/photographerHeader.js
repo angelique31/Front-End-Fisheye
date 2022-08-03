@@ -14,6 +14,6 @@ export default (photographer) => {
                 <h3>${city}, ${country}</h3>
                 <p>${tagline}</p>
             </div>
-                <img src="${picture}" alt="${name}">
+                <img src="${picture}" "${name}">
             </article>`
  };

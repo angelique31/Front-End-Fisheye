@@ -39,20 +39,25 @@ function navModal(medias) {
                 mediaSelected = i
                 break;
             };
-            console.log(medias[i].id)
+            // console.log(medias[i].id)
+            
         }
         return mediaSelected;
-       
+        
     };
 
+   
     const navNext = () => {
     
         count = getPosition(medias)   
         if (count < numberSlide -1) {
             count ++;
+            
         } else {
             count = 0;
         }
+
+        
         console.log('debug', medias, count, medias[count])
         showCard(lightboxCard(medias[count]));
     }
@@ -62,7 +67,7 @@ function navModal(medias) {
         if (count > 0) {
             count --;
         } else {
-            count = numberSlide -1;
+            count= medias.length -1;
         }
         console.log('debug', medias, count, medias[count])
         showCard(lightboxCard(medias[count]));

@@ -10,10 +10,13 @@ body {
     width: 100%
 }
 
+a{
+    margin-left: 100px;
+    display: inline-block;
+}
 
 header .logo{
     height: 50px;
-    margin-left: 100px;
     cursor: pointer;
 }
 
@@ -201,11 +204,20 @@ video:hover{
 
 /*******Error Form*********/
 .error span{
-    opacity: 1;
-    font-size: 1rem;
-    color: #901C1C;
+    font-size: 1.1rem;
     font-weight: 600;
-  }
+    color: red;
+    line-height: 2.2rem;
+    width: 90%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 10px;
+    background: #fcfcc4;
+}
+  
 
 .error input{
     border: 3px solid red

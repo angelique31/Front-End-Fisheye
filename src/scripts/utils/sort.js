@@ -15,7 +15,7 @@ export function displayDataMedia(media){
           });
           displayMedia(newArrMedia);
           break;
-          
+         
         case "date":
           newArrMedia = media.sort((a, b) =>{
             return new Date(b.date) - new Date(a.date);
@@ -30,5 +30,6 @@ export function displayDataMedia(media){
           displayMedia(newArrMedia);
           break;
       }
+  console.log(newArrMedia)    
 }
 
