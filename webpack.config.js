@@ -7,7 +7,7 @@ module.exports = {
         index: [path.resolve(__dirname, 'src/scripts/pages', 'index.js')],
         photographer: [path.resolve(__dirname, 'src/scripts/pages', 'photographer.js')],
     },
-    mode: 'development',
+    mode: 'production',
     target: 'web',
     output: {
         filename: 'js/[name].js',

@@ -73,6 +73,7 @@ header .logo{
 .photograph_medias label{
     font-size: 1.5rem;
 }
+
 .sort {
     display: flex;
     flex-direction: row;
@@ -111,6 +112,7 @@ select {
 .actived {
     background: url("../src/assets/icons/chevron-up.svg")  no-repeat 90%;
     background-color: #901C1C;
+    
 }
 
 .menuSelect:hover{
@@ -161,6 +163,7 @@ video:hover{
     color: #901C1C;
     width: 85%;
 }
+
 .galleryPhotos article .title-likes{
     display: flex;
     justify-content: space-between;
@@ -193,6 +196,7 @@ video:hover{
 .galleryPhotos article{
     position: relative;
 }
+
 .galleryPhotos article .fa-play-circle{
     color: #fff4f4de;
     position: absolute;

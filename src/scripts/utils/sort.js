@@ -6,7 +6,7 @@ sorted.addEventListener('click',(e) => {
   sorted.classList.toggle("actived")
 })
 
-export function displayDataMedia(media){
+export function selectMedia(media){
     let newArrMedia;
     switch (menuSelect.value) {
         case "pop":
@@ -29,7 +29,8 @@ export function displayDataMedia(media){
           });
           displayMedia(newArrMedia);
           break;
-      }
-  console.log(newArrMedia)    
+        default:
+            null;
+      }    
 }
 

@@ -85,12 +85,12 @@
     </main>
     
     <!-- Lightbox -->
-    <aside  id="contact_lightbox" aria-label="image closeup view" aria-hidden="true">
-      <div class="lightbox">
+    <aside  id="contact_lightbox" aria-label="image closeup view" aria-hidden="true" tabindex="-1">
+      <div class="lightbox" role="dialog">
             <button class="lightbox_close" aria-label="close dialog">Fermer</button>
             <button class="lightbox_next" aria-label="next image">Suivant</button>
             <button class="lightbox_prev" aria-label="previous image">Précédent</button>
-          <div class="lightbox_container"></div>
+          <div class="lightbox_container" tabindex="-1"></div>
       </div>
     </aside>
     

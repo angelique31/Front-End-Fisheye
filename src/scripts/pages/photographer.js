@@ -3,9 +3,9 @@ import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
 import { photographerFactory } from '../factories/pagePhotographer/photographerFactory';
 import   getCardHeader  from '../factories/pagePhotographer/photographerHeader';
 import {  } from "../form";
-import { openModalById } from "../utils/lightbox";
+import { openLightbox } from "../utils/lightbox";
 import { numberLikes } from '../utils/likes';
-import { menuSelect, displayDataMedia } from '../utils/sort';
+import { menuSelect, selectMedia } from '../utils/sort';
 
 /**
  * Fonction pour afficher les données des photographes
@@ -66,7 +66,7 @@ export async function displayMedia(medias) {
         
 
         const { id } = media;
-        openModalById(`media-${id}`, medias);
+        openLightbox(`media-${id}`, medias);
         
     });
     numberLikes();
@@ -85,8 +85,7 @@ export async function initMedias() {
     displayMedia(media);
 
     menuSelect.onchange = function () {
-        displayDataMedia(media);
+        selectMedia(media);
       };
 }
 initMedias();
-
