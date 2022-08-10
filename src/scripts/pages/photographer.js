@@ -49,22 +49,17 @@ export async function displayMedia(medias) {
     const photographersSection = document.querySelector('.galleryPhotos');
     photographersSection.innerHTML="";
     
-    
     let totalLikes = 0;
     
     medias.forEach((media) => {
         const photographerModel = mediaFactory(media);
         const userCardDOM = photographerModel.getUserCardDOM();
-        
-
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
 
         totalLikes += media.likes;
-
         const  total_likes = document.querySelector('#total_likes')
         total_likes.innerHTML = totalLikes;
         
-
         const { id } = media;
         openLightbox(`media-${id}`, medias);
         

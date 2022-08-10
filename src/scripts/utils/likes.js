@@ -17,6 +17,9 @@ export function numberLikes() {
         });
     });
 
+    /**
+     * Keybord event
+     */
     likes.forEach((e) => {
         e.addEventListener('keypress', function () {
             const numberLike = e.parentElement.children[1];

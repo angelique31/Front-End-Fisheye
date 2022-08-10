@@ -1,7 +1,7 @@
 import { lightboxCard } from '../factories/pagePhotographer/lightboxCard';
 
 /**
- * Récupère la position de l'image actuelle parmi la liste des images
+ * Retrieves the position of the current image
  * @param {array} medias 
  * @returns - integer
  */
@@ -21,7 +21,7 @@ const getPosition = (medias) => {
 };
 
 /**
- * Mets à jour le DOM de la lightbox
+ * Update the lightbox DOM
  * @param {string} card 
  */
  const updateLightbox = (card) => {
@@ -30,7 +30,7 @@ const getPosition = (medias) => {
 }
 
 /**
- * Retourne les tags html des boutons de navigation de la lightbox
+ * Returns the html tags of the lightbox navigation buttons
  * @returns - object of html element
  */
 export const getNavLightbox = () => {
@@ -42,7 +42,7 @@ export const getNavLightbox = () => {
 
 
 /**
- * Permet la mise à jour vers le media suivant
+ * update to next media
  * @param {array} medias 
  */
 export const navNext = (medias) => {
@@ -59,7 +59,7 @@ export const navNext = (medias) => {
 };
 
 /**
- * Permet la mise à jour vers le média précédent
+ * update to previous media
  * @param {array} medias 
  */
 export const navPrev = (medias) => {

@@ -1,25 +1,12 @@
 import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
 import { getNavLightbox, navNext, navPrev } from './navLightbox';
 
-// Elements HTML utilisés au cours du module
-
 const lightboxClose = document.querySelector('.lightbox_close');
 const lightboxContainer = document.querySelector('.lightbox_container');
 const lightbox = document.getElementById('contact_lightbox');
 
-// Gestion de la modale
-
 /**
- * Ferme la modale en utilisant le CSS
- */
-function closeModal() {
-    lightbox.style.display = 'none';
-    const lightboxContainer = document.querySelector('.lightbox_container');
-    lightboxContainer.innerHTML = "";
-}
-
-/**
- * Ouvre la modale en utilisant le CSS
+ * Open modale
  */
 function openModal() {
     const lightbox = document.getElementById('contact_lightbox');
@@ -30,16 +17,22 @@ function openModal() {
     lightbox.focus();
 }
 
-// Gestion de la lightbox
+/**
+ * Close modal
+ */
+ function closeModal() {
+    lightbox.style.display = 'none';
+    const lightboxContainer = document.querySelector('.lightbox_container');
+    lightboxContainer.innerHTML = "";
+}
 
 /**
- * Retire les listeners de la lightbox avant de fermer la modale
+ * Remove lightbox listeners before closing the modal
  */
 function closeLightbox() {
     const buttons = getNavLightbox();
 
     if (buttons.nextButton && buttons.prevButton) {
-        // Retire tout les listeners par un clone de lui même
         buttons.nextButton.replaceWith(buttons.nextButton.cloneNode(true));
         buttons.prevButton.replaceWith(buttons.prevButton.cloneNode(true));
     }
@@ -47,7 +40,7 @@ function closeLightbox() {
 }  
 
 /**
- * Ajoute les listeners de la lightbox à l'ouverture de la modale
+ * Add lightbox listeners when opening the modal
  * @param {array} medias 
  */
 function addNavLightbox(medias) {
@@ -74,9 +67,9 @@ function addNavLightbox(medias) {
 
 
 /**
- * Ouvre la lightbox
- * Ouvre d'abord la modale puis insère le media
- * Ajoute ensuite les listeners liés à la lightbox
+ * Open the lightbox
+ * First open the modal then insert the media
+ * Then add the listeners 
  * @param {unknown} id 
  * @param {array} medias 
  */
@@ -100,7 +93,6 @@ function addNavLightbox(medias) {
         
 
         const photographerModel = mediaFactory(medias[mediaSelected]);
-        console.log(photographerModel)
         const userCardLightbox = photographerModel.getUserCardLightbox();
         lightboxContainer.insertAdjacentHTML('afterbegin', userCardLightbox);
         
