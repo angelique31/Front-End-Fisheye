@@ -63,6 +63,7 @@ export const navNext = (medias) => {
  * @param {array} medias 
  */
 export const navPrev = (medias) => {
+    console.log('call sos', medias);
     let count = getPosition(medias);
 
     if (count > 0) {

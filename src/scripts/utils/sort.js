@@ -4,7 +4,7 @@ export const menuSelect = document.querySelector(".menuSelect");
 const sorted = document.querySelector("#sorted");
 sorted.addEventListener('click',(e) => {
   sorted.classList.toggle("actived")
-})
+});
 
 export function selectMedia(media){
     let newArrMedia;
@@ -32,5 +32,5 @@ export function selectMedia(media){
         default:
             null;
       }    
-}
+};
 

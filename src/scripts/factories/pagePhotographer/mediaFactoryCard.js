@@ -42,4 +42,4 @@
                 <h3>${title}</h3>
             </div>`;
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
-}
+};

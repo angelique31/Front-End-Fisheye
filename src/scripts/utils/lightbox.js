@@ -52,17 +52,24 @@ function addNavLightbox(medias) {
     }
 
     document.addEventListener('keydown', (e) =>{
+        console.log(e.key)
+        let nav;
+        
         switch(e.key)
         {
             case "ArrowLeft" :
-                (medias) => { navPrev(medias)}; 
+                nav =  (medias) => { navPrev(medias)};
                 break; 
             case "ArrowRight": 
-                (medias) => { navNext(medias)};
+                nav = (medias) => { navNext(medias)};
                 break;
-        }
-    })
-}
+            }
+            if (nav) {
+                nav(medias);
+            }
+        
+    });
+};
 
 
 
@@ -100,11 +107,18 @@ function addNavLightbox(medias) {
         addNavLightbox(medias, mediaSelected);
         lightboxClose.addEventListener('click', closeLightbox);
     }; 
-
+    const displayByKeydown = (e) => {
+        console.log('listener')
+            if (e.key === 'Enter') {
+                console.log('event')
+                displayLightBox();
+            }
+    }
     if (component) {
         component.addEventListener('click', displayLightBox);
+        document.addEventListener('keydown', ((e) =>{displayByKeydown(e)}));
     }
-}
+};
 
 
 
@@ -131,6 +145,6 @@ function closeModalKey(e) {
 //     if ((lightbox.style.display = 'block' && e.key === 'Enter')) {
 //         openModal();
 //     }
-// }
+// };
 
 

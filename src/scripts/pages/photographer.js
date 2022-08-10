@@ -57,7 +57,7 @@ export async function displayMedia(medias) {
         photographersSection.insertAdjacentHTML('beforeEnd', userCardDOM);
 
         totalLikes += media.likes;
-        const  total_likes = document.querySelector('#total_likes')
+        const  total_likes = document.querySelector('#total_likes');
         total_likes.innerHTML = totalLikes;
         
         const { id } = media;
