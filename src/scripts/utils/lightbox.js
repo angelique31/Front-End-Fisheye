@@ -20,10 +20,10 @@ function openModal() {
 /**
  * Close modal
  */
- function closeModal() {
+function closeModal() {
     lightbox.style.display = 'none';
     const lightboxContainer = document.querySelector('.lightbox_container');
-    lightboxContainer.innerHTML = "";
+    lightboxContainer.innerHTML = '';
 }
 
 /**
@@ -47,29 +47,29 @@ function addNavLightbox(medias) {
     const buttons = getNavLightbox();
 
     if (buttons.nextButton && buttons.prevButton) {
-        buttons.nextButton.addEventListener('click', (e) => { navNext(medias)});
-        buttons.prevButton.addEventListener('click', (e) => { navPrev(medias)});
+        buttons.nextButton.addEventListener('click', () => { navNext(medias);});
+        buttons.prevButton.addEventListener('click', () => { navPrev(medias);});
     }
 
     document.addEventListener('keydown', (e) =>{
-        console.log(e.key)
+        console.log(e.key);
         let nav;
         
         switch(e.key)
         {
-            case "ArrowLeft" :
-                nav =  (medias) => { navPrev(medias)};
-                break; 
-            case "ArrowRight": 
-                nav = (medias) => { navNext(medias)};
-                break;
-            }
-            if (nav) {
-                nav(medias);
-            }
+        case 'ArrowLeft' :
+            nav =  (medias) => { navPrev(medias);};
+            break; 
+        case 'ArrowRight': 
+            nav = (medias) => { navNext(medias);};
+            break;
+        }
+        if (nav) {
+            nav(medias);
+        }
         
     });
-};
+}
 
 
 
@@ -80,7 +80,7 @@ function addNavLightbox(medias) {
  * @param {unknown} id 
  * @param {array} medias 
  */
- export function openLightbox(id, medias) {
+export function openLightbox(id, medias) {
     const component = document.getElementById(id);
     
     const displayLightBox = () => {        
@@ -93,9 +93,9 @@ function addNavLightbox(medias) {
         let mediaSelected = 0;
         for (let i = 0; i < filterMedia.length; i++) {
             if (id === `${filterMedia[i].id}`) {
-                mediaSelected = i
+                mediaSelected = i;
                 break;
-            };
+            }
         }
         
 
@@ -108,17 +108,17 @@ function addNavLightbox(medias) {
         lightboxClose.addEventListener('click', closeLightbox);
     }; 
     const displayByKeydown = (e) => {
-        console.log('listener')
-            if (e.key === 'Enter') {
-                console.log('event')
-                displayLightBox();
-            }
-    }
+        console.log('listener');
+        if (e.key === 'Enter') {
+            console.log('event');
+            displayLightBox();
+        }
+    };
     if (component) {
         component.addEventListener('click', displayLightBox);
-        document.addEventListener('keydown', ((e) =>{displayByKeydown(e)}));
+        component.addEventListener('keydown', ((e) =>{displayByKeydown(e);}));
     }
-};
+}
 
 
 
@@ -126,7 +126,7 @@ function addNavLightbox(medias) {
  * KeyboardEvent
  */
 
- document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
     closeModalKey(e);
 });
 
