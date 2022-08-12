@@ -2,8 +2,8 @@ import { getPhotographers, getMedias } from '../utils/api';
 import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
 import { photographerFactory } from '../factories/pagePhotographer/photographerFactory';
 import   getCardHeader  from '../factories/pagePhotographer/photographerHeader';
-import {  } from "../form";
-import { openLightbox } from "../utils/lightbox";
+import {  } from '../form';
+import { openLightbox } from '../utils/lightbox';
 import { numberLikes } from '../utils/likes';
 import { menuSelect, selectMedia } from '../utils/sort';
 
@@ -28,7 +28,7 @@ async function displayData(photographers) {
  */
 async function init() {
     const { photographers } = await getPhotographers();
-   
+    
     const idRequest = window.location.href.split('?')[1];
     const photographer = await photographers.filter(photographer => photographer.id == idRequest);
     
@@ -47,7 +47,7 @@ init();
 export async function displayMedia(medias) {
    
     const photographersSection = document.querySelector('.galleryPhotos');
-    photographersSection.innerHTML="";
+    photographersSection.innerHTML='';
     
     let totalLikes = 0;
     
@@ -81,6 +81,6 @@ export async function initMedias() {
 
     menuSelect.onchange = function () {
         selectMedia(media);
-      };
+    };
 }
 initMedias();

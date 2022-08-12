@@ -28,5 +28,4 @@
             "always"
         ]
     }
-    // "parser": "babel-eslint"
 }

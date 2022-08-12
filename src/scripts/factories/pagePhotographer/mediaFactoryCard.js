@@ -3,7 +3,7 @@
  * @param {*} data 
  * @returns - getUserCardDOM,  getUserCardLightbox
  */
- export function mediaFactory(data) {
+export function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
     
     const picture = `/src/assets/medias/${photographerId}/${image} `; 
@@ -13,12 +13,12 @@
   Function card photographers 2nd page
   * @returns 
   */
-     const getUserCardDOM = () => `
+    const getUserCardDOM = () => `
         <article>
             <div tabindex="0" id="media-${id}">
                 ${video? `<strong class="far fa-play-circle"></strong><video><source src="${videos}" type="video/mp4" title="video de ${title}" tabindex="0"></video>` 
-                :
-                `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
+        :
+        `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
             </div>
     
             <div class=title-likes>
@@ -30,16 +30,16 @@
             </div>
         </article>`;
 
-  /**
+    /**
   * Function card lightbox
   * @returns 
   */           
     const getUserCardLightbox = () => `
             <div class="slide_hide">
                 ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
-                :
-                `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
+        :
+        `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
                 <h3>${title}</h3>
             </div>`;
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
-};
+}

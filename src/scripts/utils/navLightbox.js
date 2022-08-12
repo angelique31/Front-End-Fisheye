@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { lightboxCard } from '../factories/pagePhotographer/lightboxCard';
 
 /**
@@ -6,15 +7,15 @@ import { lightboxCard } from '../factories/pagePhotographer/lightboxCard';
  * @returns - integer
  */
 const getPosition = (medias) => {
-    const lightbox = document.getElementsByClassName("slide_hide")[0];
+    const lightbox = document.getElementsByClassName('slide_hide')[0];
     const currentId = lightbox.children[0].id;
     
     let mediaSelected = 0;
     for (let i = 0; i < medias.length; i++) {
         if (`${currentId}` === `${medias[i].id}`) {
-            mediaSelected = i
+            mediaSelected = i;
             break;
-        };
+        }
         
     }
     return mediaSelected;
@@ -24,10 +25,10 @@ const getPosition = (medias) => {
  * Update the lightbox DOM
  * @param {string} card 
  */
- const updateLightbox = (card) => {
-    const lightbox = document.getElementsByClassName("slide_hide")[0];
+const updateLightbox = (card) => {
+    const lightbox = document.getElementsByClassName('slide_hide')[0];
     lightbox.innerHTML = card;
-}
+};
 
 /**
  * Returns the html tags of the lightbox navigation buttons
@@ -63,7 +64,6 @@ export const navNext = (medias) => {
  * @param {array} medias 
  */
 export const navPrev = (medias) => {
-    console.log('call sos', medias);
     let count = getPosition(medias);
 
     if (count > 0) {

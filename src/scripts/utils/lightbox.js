@@ -137,14 +137,6 @@ function closeModalKey(e) {
     }
 }
 
-// document.addEventListener('keydown', (e) => {
-//     openModalKey(e);
-// });
-  
-// function openModalKey(e) {
-//     if ((lightbox.style.display = 'block' && e.key === 'Enter')) {
-//         openModal();
-//     }
-// };
+
 
 
