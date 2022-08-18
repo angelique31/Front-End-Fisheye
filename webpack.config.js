@@ -15,12 +15,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html'),
+            template: path.resolve(__dirname, 'src/pages','index.html'),
             filename: 'index.html',
             chunks: ['index'],
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'photographer.html'),
+            template: path.resolve(__dirname, 'src/pages', 'photographer.html'),
             filename: 'photographer.html',
             chunks: ['photographer'],
         }),
