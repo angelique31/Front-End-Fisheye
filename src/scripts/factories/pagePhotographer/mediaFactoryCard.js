@@ -22,10 +22,10 @@ export function mediaFactory(data) {
             </div>
     
             <div class=title-likes>
-                <h2>${title}</h2>
+                <h2 tabindex="0">${title}</h2>
                 <span title="number of like picture">${likes}</span>
                 <span class=like aria-label="likes">
-                <strong class="fas fa-heart heart-fas" aria-label="likes" aria-hidden="true"></strong>
+                <strong class="fas fa-heart heart-fas" tabindex="0" aria-label="${likes}like" aria-hidden="true"></strong>
                 </span>
             </div>
         </article>`;

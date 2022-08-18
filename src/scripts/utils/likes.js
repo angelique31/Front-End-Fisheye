@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export function numberLikes() {
     const likes = document.querySelectorAll('.like'); 
 

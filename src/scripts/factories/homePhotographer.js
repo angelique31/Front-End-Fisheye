@@ -3,7 +3,7 @@
 * @returns photographer card
 */
     
- export default (photographer) => {
+export default (photographer) => {
     const {name, id, portrait, city, country, tagline, price } = photographer;
     const picture = `/src/assets/photographers/${portrait}`;
 
@@ -18,5 +18,5 @@
             <p>${tagline}</p>
             <span>${price}€/jour</span>
         </div>
-    </article>`
- };
+    </article>`;
+};

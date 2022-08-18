@@ -3,7 +3,7 @@
  * @param {*} data 
  * @returns - getUserCardDOM
  */
- export function photographerFactory(data) {
+export function photographerFactory(data) {
     const { name, id, portrait, city, country, tagline, price } = data;
 
     const priceDay = document.querySelector('.price-day');
@@ -13,4 +13,4 @@
     contact.innerHTML = `Contactez-moi ${name} `;
 
     return { name, id, portrait, city, country, tagline, price};
-};
+}

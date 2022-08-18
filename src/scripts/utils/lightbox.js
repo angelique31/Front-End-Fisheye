@@ -52,7 +52,6 @@ function addNavLightbox(medias) {
     }
 
     document.addEventListener('keydown', (e) =>{
-        console.log(e.key);
         let nav;
         
         switch(e.key)
@@ -107,6 +106,7 @@ export function openLightbox(id, medias) {
         addNavLightbox(medias, mediaSelected);
         lightboxClose.addEventListener('click', closeLightbox);
     }; 
+
     const displayByKeydown = (e) => {
         console.log('listener');
         if (e.key === 'Enter') {
@@ -114,6 +114,7 @@ export function openLightbox(id, medias) {
             displayLightBox();
         }
     };
+
     if (component) {
         component.addEventListener('click', displayLightBox);
         component.addEventListener('keydown', ((e) =>{displayByKeydown(e);}));
@@ -123,7 +124,7 @@ export function openLightbox(id, medias) {
 
 
 /**
- * KeyboardEvent
+ * KeyboardEvent closeModale
  */
 
 document.addEventListener('keydown', (e) => {
