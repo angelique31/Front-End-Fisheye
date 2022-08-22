@@ -99,7 +99,7 @@ header .logo{
 select {
     -webkit-appearance: none;
     appearance: none;
-    background: url("../src/assets/icons/chevron-down.svg")  no-repeat 90% #901C1C;
+    background: url("../assets/icons/chevron-down.svg")  no-repeat 90% #901C1C;
     border: none;
     color: white;
     padding: 2%;
@@ -110,7 +110,7 @@ select {
   }
   
 .actived {
-    background: url("../src/assets/icons/chevron-up.svg")  no-repeat 90%;
+    background: url("../assets/icons/chevron-up.svg")  no-repeat 90%;
     background-color: #901C1C;
 }
 
@@ -400,7 +400,7 @@ textarea{
 .lightbox_next,
 .lightbox_prev{
     border: none;
-    background: url(../src/assets/icons/arrow.svg) center center/30px 38px no-repeat;
+    background: url(../assets/icons/arrow.svg) center center/30px 38px no-repeat;
     width: 50px;
     height: 100%;
     position: absolute;
@@ -418,7 +418,7 @@ textarea{
 
 .lightbox_close{
     border: none;
-    background: url(/src/assets/icons/close_lightbox.svg) center center/32px 32px no-repeat transparent;
+    background: url(../assets/icons/close_lightbox.svg) center center/32px 32px no-repeat transparent;
     width: 42px;
     height: 42px;
     top: 20px;

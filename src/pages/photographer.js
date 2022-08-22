@@ -2,7 +2,7 @@ import { getPhotographers, getMedias } from '../utils/api';
 import { mediaFactory } from '../factories/pagePhotographer/mediaFactoryCard';
 import { photographerFactory } from '../factories/pagePhotographer/photographerFactory';
 import   getCardHeader  from '../factories/pagePhotographer/photographerHeader';
-import {  } from '../form';
+import {  } from '../scripts/form';
 import { openLightbox } from '../utils/lightbox';
 import { numberLikes } from '../utils/likes';
 import { menuSelect, selectMedia } from '../utils/sort';

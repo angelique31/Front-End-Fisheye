@@ -1,7 +1,5 @@
 import {getPhotographers} from '../utils/api';
 import getCard from '../factories/homePhotographer';
-import '../../../styles/style.css';
-
 
 /**
  * Function display data photographers

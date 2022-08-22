@@ -5,7 +5,7 @@
     
 export default (photographer) => {
     const {name, portrait, city, country, tagline,} = photographer;
-    const picture = `/src/assets/photographers/${portrait}`;
+    const picture = `assets/photographers/${portrait}`;
 
     return `
         <article>
