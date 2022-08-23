@@ -499,7 +499,7 @@ footer h4{
     margin-right: 70px;
 }
 
-  /**********Responsive***********/
+ /**********Responsive***********/
   
 @media screen and (max-width: 1220px){
     .galleryPhotos{
@@ -515,6 +515,10 @@ footer h4{
     .contact_button{
         bottom: 20px;
         left: 70px;
+    }
+
+    .sort{
+        margin-top: 20px;
     }
 }
 
@@ -533,6 +537,7 @@ footer h4{
 
     .photograph-header .info{
         margin-left: 20px;
+        text-align: center;
     }
 
     .contact_button{
@@ -540,7 +545,7 @@ footer h4{
         height: 60px;
         font-size: 1rem;
         top: 160px;
-        left: 20px;
+        left: 114px;
     }
 
     .photograph-header article img{
@@ -553,47 +558,148 @@ footer h4{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .lightbox_next,
+    .lightbox_prev{
+        right: 0px;
+    }
+
+    .lightbox_prev{
+        left: 0px;
+    }
 }
 
 @media screen and (max-width: 715px){
+    header .logo{
+       
+        margin: 10px 0 20px 66px;
+    }
+    
     .photograph-header{
         height: 400px;
+        width: 351px;
     }
+
+    .photograph-header .info{
+        margin: auto;
+    }
+
     .photograph-header article img{
         bottom: 35px;
         left: 20px;
         height: 150px;
         width: 150px;
+        display: block;
+        margin: auto;
+        margin-right: 20px;
     }
     
     .photograph-header article h2{
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .photograph-header article h3{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .photograph-header article p{
-        font-size: 0.8rem;
-        line-height: 10px;
+        font-size: 1rem;
+        line-height: 30px;
     }
 
     .contact_button{
         width: 120px;
         height: 50px;
         font-size: 0.7rem;
-        top: 140px;
+        top: -81px;
+        margin: auto;
+    }
+
+    .modal{
+        width: 100%;
+    }
+    textarea{
+        width: 100%;
+    }
+
+    .modal header h3{
+        margin-top: 70px;
+        font-size: 3rem;
+    }
+
+    .modal header img{
+        right: 0px;
+    }
+
+    form input::placeholder{
+        font-size: 1.5rem;
+    }
+
+    .error span{
+        font-size: 0.7rem;
+    }
+
+    .lightbox_close{
+        right: 0px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .photograph-header{
+        margin-left: 77px;
+    }
+
+    .galleryPhotos{
+        margin-left: 77px;
     }
 }
 
 @media screen and (max-width: 425px){
-    .contact_button{
-        left: 40px;
+    header .logo{
+        margin-left: 0px;
+    }
+
+    .photograph-header{
+        margin-left: 20px;
     }
 
     .photograph-header article img{
         left: 40px;
+    }
+
+    .modal header h3{
+        font-size: 2rem;
+    }
+    
+    .modal header img{
+        height: 32px;
+        right: -2.5px;
+    }
+
+    .error span{
+        font-size: 0.6rem;
+    }
+
+    .lightbox_next,
+    .lightbox_prev{
+        right: 0px;
+    }
+
+    .lightbox_prev{
+        left: 0px;
+    }
+
+    .lightbox_close{
+        right: 0px;
+    }
+
+    .galleryPhotos{
+        margin-left: 20px;
+    }
+
+    .sort{
+        margin-left: 20px;
     }
 }
 
@@ -618,31 +724,41 @@ footer h4{
     .photograph-header article p{
         font-size: 0.5rem;
     }
+
+    .photograph_medias label{
+        font-size: 1.2rem;
+    }
+
+    .error span{
+        font-size: 0.5rem;
+    }
 }
 
 @media screen and (max-width: 375px){
     header .logo{
         height: 30px;
-        margin: 10px 0 20px 110px;
+        margin: 10px 0 20px 34px;
+    }
+
+    .photograph-header{
+        margin-left: 20px;
     }
     .photograph-header .info{
         text-align: center;
     }
-    .photograph-header article h2{
-        font-size: 1.5rem;
-    }
-
-    .photograph-header article h3{
-        font-size: 0.8rem;
-    }
-
+   
     .contact_button{
-        left: 30px;
+        left: 121px;
     }
 
     .photograph-header article img{
         left: 30px;
         height: 110px;
         width: 110px;
+        margin-left: 100px;
+    }
+
+    .galleryPhotos{
+        margin-left: 11px;
     }
 }   
