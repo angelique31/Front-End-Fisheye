@@ -236,7 +236,6 @@ select {
     display: none;
     position: absolute;
     top: 70px;
-    left: 100px;
     width: 100%;
     z-index: 8;
 }
@@ -275,7 +274,7 @@ select {
     color: white;
     padding: 11px;
     width: 170px;
-    height: 70px;
+    height: 59px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
@@ -295,6 +294,7 @@ select {
     justify-content: space-between;
     padding: 35px 35px 100px 35px;;
     margin: auto;
+    margin-bottom: -16px;
     animation-name: modalopen;
     animation-duration: 0.8s;
 }
