@@ -351,6 +351,7 @@ form input {
 textarea{
     resize: none;
     font-size: 1.7rem;
+    height: 170px;
 }
 
 .contact_modal{
@@ -468,7 +469,7 @@ textarea{
 
 /************Like and price*************/
 footer{
-    width: 376px;
+    width: 300px;
     height: 69px;
     background: #DB8876;
     border-radius: 5px;
@@ -476,7 +477,7 @@ footer{
     bottom: 0;
     right: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 30px;
 }
@@ -484,7 +485,7 @@ footer{
 footer p{
     font-size: 1.5rem;
     font-weight: 700;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .price-day{
@@ -494,7 +495,7 @@ footer p{
 
  footer .heart-fas{
     font-size: 1.5rem;
-    margin-right: 70px;
+    margin-right: 40px;
 }
 
  /**********Responsive***********/
