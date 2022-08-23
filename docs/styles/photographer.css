@@ -149,7 +149,7 @@ select {
 }
 
 .galleryPhotos article img:hover, 
-video:hover{
+ video:hover{
     transform: scale(1.02);
     box-shadow: 1px 1px 8px 0px  #312e2e;
     opacity: 0.8;
@@ -221,7 +221,6 @@ video:hover{
     background: #fcfcc4;
 }
   
-
 .error input{
     border: 3px solid red
   } 
@@ -269,6 +268,7 @@ video:hover{
 .contact_button:active{
     transform: scale(1.1);
 }
+
 .contact_button_form {
     font-size: 1.2rem;
     font-weight: bold;
@@ -348,7 +348,6 @@ form input {
     font-size: 2rem;
 }
 
-
 textarea{
     resize: none;
     font-size: 1.7rem;
@@ -414,7 +413,7 @@ textarea{
     right: auto;
     left: 120px;
     transform: rotate(180deg);
-  }
+}
 
 .lightbox_close{
     border: none;
@@ -467,7 +466,6 @@ textarea{
     color: #901C1C;
 }
 
-
 /************Like and price*************/
 footer{
     width: 376px;
@@ -483,7 +481,7 @@ footer{
     margin-right: 30px;
 }
 
-footer h4{
+footer p{
     font-size: 1.5rem;
     font-weight: 700;
     margin-left: 20px;
