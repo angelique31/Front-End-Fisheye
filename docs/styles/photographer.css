@@ -45,13 +45,13 @@ header .logo{
     flex-wrap: wrap;
 }
 
-.photograph-header article h2{
+.photograph-header article h1{
     font-size: 3.5rem;
     font-weight: 400;
     color: #D3573C;
 }
 
-.photograph-header article h3{
+.photograph-header article h2{
     font-size: 1.5rem;
     font-weight: 400;
     color: #901C1C;
@@ -99,7 +99,7 @@ header .logo{
 select {
     -webkit-appearance: none;
     appearance: none;
-    background: url("../src/assets/icons/chevron-down.svg")  no-repeat 90% #901C1C;
+    background: url("../assets/icons/chevron-down.svg")  no-repeat 90% #901C1C;
     border: none;
     color: white;
     padding: 2%;
@@ -110,7 +110,7 @@ select {
   }
   
 .actived {
-    background: url("../src/assets/icons/chevron-up.svg")  no-repeat 90%;
+    background: url("../assets/icons/chevron-up.svg")  no-repeat 90%;
     background-color: #901C1C;
 }
 
@@ -149,7 +149,7 @@ select {
 }
 
 .galleryPhotos article img:hover, 
-video:hover{
+ video:hover{
     transform: scale(1.02);
     box-shadow: 1px 1px 8px 0px  #312e2e;
     opacity: 0.8;
@@ -221,7 +221,6 @@ video:hover{
     background: #fcfcc4;
 }
   
-
 .error input{
     border: 3px solid red
   } 
@@ -237,7 +236,6 @@ video:hover{
     display: none;
     position: absolute;
     top: 70px;
-    left: 100px;
     width: 100%;
     z-index: 8;
 }
@@ -269,6 +267,7 @@ video:hover{
 .contact_button:active{
     transform: scale(1.1);
 }
+
 .contact_button_form {
     font-size: 1.2rem;
     font-weight: bold;
@@ -313,7 +312,7 @@ video:hover{
     top: 1.4rem;
 }
 
-.modal header h3 {
+.modal header p {
     font-size: 4rem;
     font-weight: normal;
     margin-bottom: 20px;
@@ -348,7 +347,6 @@ form input {
     border-radius: 5px;
     font-size: 2rem;
 }
-
 
 textarea{
     resize: none;
@@ -402,11 +400,10 @@ textarea{
 .lightbox_next,
 .lightbox_prev{
     border: none;
-    background: url(../src/assets/icons/arrow.svg) center center/30px 38px no-repeat;
-    width: 50px;
-    height: 100%;
+    background: url(../assets/icons/arrow.svg) center center/30px 38px no-repeat;
+    height: 38px;
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 120px;
     margin-top: -14px;
     z-index: 11;
@@ -416,11 +413,11 @@ textarea{
     right: auto;
     left: 120px;
     transform: rotate(180deg);
-  }
+}
 
 .lightbox_close{
     border: none;
-    background: url(/src/assets/icons/close_lightbox.svg) center center/32px 32px no-repeat transparent;
+    background: url(../assets/icons/close_lightbox.svg) center center/32px 32px no-repeat transparent;
     width: 42px;
     height: 42px;
     top: 20px;
@@ -469,10 +466,9 @@ textarea{
     color: #901C1C;
 }
 
-
 /************Like and price*************/
 footer{
-    width: 376px;
+    width: 300px;
     height: 69px;
     background: #DB8876;
     border-radius: 5px;
@@ -480,15 +476,15 @@ footer{
     bottom: 0;
     right: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 30px;
 }
 
-footer h4{
+footer p{
     font-size: 1.5rem;
     font-weight: 700;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .price-day{
@@ -498,10 +494,10 @@ footer h4{
 
  footer .heart-fas{
     font-size: 1.5rem;
-    margin-right: 70px;
+    margin-right: 40px;
 }
 
-  /**********Responsive***********/
+ /**********Responsive***********/
   
 @media screen and (max-width: 1220px){
     .galleryPhotos{
@@ -525,11 +521,11 @@ footer h4{
 }
 
 @media screen and (max-width: 830px){
-    .photograph-header article h2{
+    .photograph-header article h1{
         font-size: 3rem;
     }
 
-    .photograph-header article h3{
+    .photograph-header article h2{
         font-size: 1.2rem;
     }
 
@@ -596,12 +592,12 @@ footer h4{
         margin-right: 20px;
     }
     
-    .photograph-header article h2{
+    .photograph-header article h1{
         font-size: 2.5rem;
     }
 
-    .photograph-header article h3{
-        font-size: 1.5rem;
+    .photograph-header article h2{
+        font-size: 2.5rem;
     }
 
     .photograph-header article p{
@@ -624,7 +620,8 @@ footer h4{
         width: 100%;
     }
 
-    .modal header h3{
+
+    .modal header p{
         margin-top: 70px;
         font-size: 3rem;
     }
@@ -670,7 +667,7 @@ footer h4{
         left: 40px;
     }
 
-    .modal header h3{
+    .modal header p{
         font-size: 2rem;
     }
     
@@ -764,7 +761,8 @@ footer h4{
         margin-left: 11px;
     }
 
-    
-
+    .galleryPhotos{
+        margin-left: 11px;
+    }
     
 }   

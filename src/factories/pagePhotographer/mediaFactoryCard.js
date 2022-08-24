@@ -6,8 +6,8 @@
 export function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } = data;
     
-    const picture = `/src/assets/medias/${photographerId}/${image} `; 
-    const videos = `/src/assets/medias/${photographerId}/${video} `; 
+    const picture = `assets/medias/${photographerId}/${image} `; 
+    const videos = `assets/medias/${photographerId}/${video} `; 
 
     /**
   Function card photographers 2nd page

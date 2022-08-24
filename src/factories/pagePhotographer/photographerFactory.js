@@ -1,5 +1,5 @@
 /**
- * Factory function (fonction des données des photographes)
+ * Factory function (function data photographers)
  * @param {*} data 
  * @returns - getUserCardDOM
  */

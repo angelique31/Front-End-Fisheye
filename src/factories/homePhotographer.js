@@ -5,12 +5,12 @@
     
 export default (photographer) => {
     const {name, id, portrait, city, country, tagline, price } = photographer;
-    const picture = `/src/assets/photographers/${portrait}`;
+    const picture = `assets/photographers/${portrait}`;
 
     return `
     <article>
         <a href= "photographer.html?${id}">
-            <img src="${picture}" alt="${name}" title="picture de photographer">
+            <img src="${picture}" alt="picture ${name}" title="picture de photographer">
             <h2>${name}</h2>
         </a>
         <div class=info tabindex="0" >
