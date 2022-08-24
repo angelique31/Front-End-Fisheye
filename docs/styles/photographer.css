@@ -312,7 +312,7 @@ select {
     top: 1.4rem;
 }
 
-.modal header h3 {
+.modal header p {
     font-size: 4rem;
     font-weight: normal;
     margin-bottom: 20px;
@@ -521,11 +521,11 @@ footer p{
 }
 
 @media screen and (max-width: 830px){
-    .photograph-header article h2{
+    .photograph-header article h1{
         font-size: 3rem;
     }
 
-    .photograph-header article h3{
+    .photograph-header article h2{
         font-size: 1.2rem;
     }
 
@@ -592,11 +592,11 @@ footer p{
         margin-right: 20px;
     }
     
-    .photograph-header article h2{
+    .photograph-header article h1{
         font-size: 2.5rem;
     }
 
-    .photograph-header article h3{
+    .photograph-header article h2{
         font-size: 1.5rem;
     }
 
@@ -620,7 +620,7 @@ footer p{
         width: 100%;
     }
 
-    .modal header h3{
+    .modal header p{
         margin-top: 70px;
         font-size: 3rem;
     }
@@ -666,7 +666,7 @@ footer p{
         left: 40px;
     }
 
-    .modal header h3{
+    .modal header p{
         font-size: 2rem;
     }
     
