@@ -8,7 +8,7 @@ import { numberLikes } from '../utils/likes';
 import { menuSelect, selectMedia } from '../utils/sort';
 
 /**
- * Fonction pour afficher les données des photographes
+ * Function display data photographers
  * @param {*} photographers 
  */
 async function displayData(photographers) {

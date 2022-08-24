@@ -1,5 +1,5 @@
 /**
-* Fonction de la création des cartes des photographes 2ème page
+* Function cards of the photographers 2nd page
 * @returns photographer card
 */
     
