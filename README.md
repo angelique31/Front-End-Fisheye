@@ -35,4 +35,27 @@ Le code est lisible. Choisir des noms qui ont un sens pour les variables, les fo
 
 Voici le lien du site vià github pages :  https://angelique31.github.io/Front-End-Fisheye/
 
+## Validation de l'accessibilité avec Wave Tools du projet 
+
+Page d'accueil :
+
+<img width="166" alt="Capture-wave-index-redim" src="https://user-images.githubusercontent.com/93211301/186387123-eeb9ef28-57f8-4d6c-90c5-fe1c05ecd88e.PNG">
+
+
+Page des photographes :
+
+<img width="174" alt="Capture-wave-photographer-redim" src="https://user-images.githubusercontent.com/93211301/186387406-90c1f2e8-5322-4b09-98d8-07150d523d38.PNG">
+
+
+## Validation avec W3C du projet 
+
+<img width="500" alt="Capture-W3C-HTML-redim" src="https://user-images.githubusercontent.com/93211301/186386449-4fe61434-9445-488e-a9df-5f6de4411e5a.PNG">
+
+<img width="500" alt="Capture-W3C-CSS-redim" src="https://user-images.githubusercontent.com/93211301/186386817-dc131ca0-8d1f-4442-bcc0-61b71350b35b.PNG">
+
+
+
+
+
+
 
