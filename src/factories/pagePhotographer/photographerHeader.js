@@ -10,8 +10,8 @@ export default (photographer) => {
     return `
         <article>
             <div class=info tabindex="2">
-                <h2>${name}</h2>
-                <h3>${city}, ${country}</h3>
+                <h1>${name}</h1>
+                <h2>${city}, ${country}</h2>
                 <p>${tagline}</p>
             </div>
                 <img src="${picture}" alt="${name}">
