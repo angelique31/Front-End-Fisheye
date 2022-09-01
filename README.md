@@ -7,6 +7,9 @@ Créez un site accessible pour une plateforme de photographes
 
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. Ils ont récemment levé des fonds et aimeraient mettre à jour leur site web.
 
+## Installation du projet 
+Après avoir cloné le projet, il suffit d'ouvrir le fichier ./doc/index.html, puis clic droit "open with live server"
+
 ## Compétences évaluées
 
 - Ecrire du code JavaScript maintenable
