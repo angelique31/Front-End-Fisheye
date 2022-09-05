@@ -38,7 +38,7 @@ export function mediaFactory(data) {
             <div class="slide_hide">
                 ${video? `<video controls="controls"><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
         :
-        `<img src="${picture}" alt="Photo de ${title}" tabindex="0" title="picture de ${title}" id=${id}>` }
+        `<img src="${picture}" alt="Photo de ${title}" tabindex="0" title="picture de ${title}" id=${id}>`}
                 <h3 tabindex="0">${title}</h3>
             </div>`;
     return { id, photographerId, title, image, video, likes, date, price, getUserCardDOM, getUserCardLightbox };
