@@ -11,6 +11,9 @@ export function photographerFactory(data) {
 
     const contact = document.querySelector('.contact');
     contact.innerHTML = `Contactez-moi ${name}`;
-    
+
+    const formModal = document.querySelector('.modal');
+    formModal.ariaLabel = `Contactez-moi, ${name}`;
+
     return { name, id, portrait, city, country, tagline, price};
 }

@@ -6,6 +6,6 @@ export const lightboxCard = (media) => {
     return `
         ${video? `<video controls="controls" id=${id}><source src="${videos}" type="video/mp4" title="video de ${title}"></video>` 
         :
-        `<img src="${picture}" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
-        <h3>${title}</h3>`;
+        `<img src="${picture}" tabindex="0" alt="Photo de ${title}" title="picture de ${title}" id=${id}>` }
+        <h3 tabindex="0">${title}</h3>`;
 };

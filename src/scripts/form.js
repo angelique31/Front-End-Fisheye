@@ -9,14 +9,22 @@ const firstName = document.querySelector('#first');
  */
 function launchModal() {
     modalbg.style.display = 'block';
+    // modalbg.focus();
     firstName.focus();
     
 }
- 
 
 contactBtn.addEventListener('click', launchModal);
 
-  
+// modalbg.addEventListener("keyup", (e) => {
+//     switch (e.key) {
+//       case "Tab":
+//         firstName.focus();
+//         break;
+//     }
+//   });
+
+
 /**
    * close modale
    */
@@ -224,9 +232,9 @@ submitInput.addEventListener('click', (e) => onSubmit(e));
  */
 window.addEventListener('keyup', (e) => {
     closeModalKey(e);
-    if (e.key === 'Tab') {
-        if (document.activeElement === closeBtn) modalbg.focus();
-    }
+    // if (e.key === 'Tab') {
+    //     if (document.activeElement === closeBtn) modalbg.focus();
+    // }
 });
   
 function closeModalKey(e) {
