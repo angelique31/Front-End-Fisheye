@@ -108,7 +108,6 @@ export function openLightbox(id, medias) {
     }; 
 
     const displayByKeydown = (e) => {
-        console.log('listener');
         if (e.key === 'Enter') {
             displayLightBox();
         }

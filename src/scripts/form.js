@@ -10,6 +10,7 @@ const firstName = document.querySelector('#first');
 function launchModal() {
     modalbg.style.display = 'block';
     firstName.focus();
+    
 }
  
 
@@ -223,6 +224,9 @@ submitInput.addEventListener('click', (e) => onSubmit(e));
  */
 window.addEventListener('keyup', (e) => {
     closeModalKey(e);
+    if (e.key === 'Tab') {
+        if (document.activeElement === closeBtn) modalbg.focus();
+    }
 });
   
 function closeModalKey(e) {
@@ -231,4 +235,3 @@ function closeModalKey(e) {
     }
 }
 
-  
